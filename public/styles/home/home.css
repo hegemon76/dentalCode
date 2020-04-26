@@ -228,74 +228,6 @@ body {
   display: none;
 }
 
-.home-section-3 form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.home-section-3 form input, .home-section-3 form textarea {
-  width: 300px;
-  border: 1px solid #78c1ff;
-  border-radius: 10px;
-  padding: 0 1rem;
-}
-
-.home-section-3 form input {
-  height: 40px;
-  margin-bottom: 2rem;
-}
-
-.home-section-3 form textarea {
-  min-height: 300px;
-  padding-top: 0.5rem;
-}
-
-.home-section-3 form input::-webkit-input-placeholder, .home-section-3 form textarea::-webkit-input-placeholder {
-  font-family: "Poppins";
-  opacity: 0.5;
-}
-
-.home-section-3 form input:-ms-input-placeholder, .home-section-3 form textarea:-ms-input-placeholder {
-  font-family: "Poppins";
-  opacity: 0.5;
-}
-
-.home-section-3 form input::-ms-input-placeholder, .home-section-3 form textarea::-ms-input-placeholder {
-  font-family: "Poppins";
-  opacity: 0.5;
-}
-
-.home-section-3 form input::placeholder, .home-section-3 form textarea::placeholder {
-  font-family: "Poppins";
-  opacity: 0.5;
-}
-
-.home-section-3 form button {
-  margin-top: 1rem;
-  width: 200px;
-  height: 50px;
-  background-color: #78c1ff;
-  color: #fff;
-  border: 0;
-  outline: 0;
-  font-family: "Poppins";
-  border-radius: 30px;
-}
-
-@media (min-width: 600px) {
-  .home-section-3 form input, .home-section-3 form textarea {
-    width: 450px;
-  }
-}
-
 @media (min-width: 1000px) {
   .home-section-3 {
     display: -webkit-box;
@@ -322,9 +254,6 @@ body {
 }
 
 @media (min-width: 1300px) {
-  .home-section-3 form input, .home-section-3 form textarea {
-    width: 500px;
-  }
   .home-section-3 .text-container p {
     text-align: center;
     padding: 0 10vw;

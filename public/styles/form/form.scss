@@ -1,0 +1,50 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input,textarea{
+        width:250px;
+        border: 1px solid #78c1ff;
+        border-radius: 10px;
+        padding: 0 1rem;
+    }
+    input{
+        height: 40px;
+        margin-bottom: 2rem;
+    }
+    textarea{
+        min-height: 250px;
+        padding-top: 0.5rem;
+    }
+    input::placeholder,textarea::placeholder{
+        font-family:"Poppins";
+        opacity: 0.5;
+    }
+    button{
+        margin-top: 1rem;
+        width:200px;
+        height: 50px;
+        background-color: #78c1ff;
+        color:#fff;
+        border:0;
+        outline:0;
+        font-family: "Poppins";
+        border-radius: 30px;
+    }
+}
+
+@media(min-width:600px){
+    form{
+        input,textarea{
+            width:450px;
+        }
+    }
+}
+
+@media(min-width:1300px){
+    form{
+        input,textarea{
+            width:500px;
+        }
+    }
+}

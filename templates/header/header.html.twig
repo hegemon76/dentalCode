@@ -1,12 +1,16 @@
 <html>
 <head>
-
+    <title>Dentalcode</title>
+    <meta name="google-site-verification" content="x_an-RZqueWdx1M-QJAQB1VZBtM1T-4eO8q8G1ZZpfw" />
 {% block stylesheets %}
     <link href="{{ asset('styles/main.css') }}" rel="stylesheet"/>
     <link href="{{ asset('styles/keyframes.css') }}" rel="stylesheet"/>
     <link href="{{ asset('styles/header/header.css') }}" rel="stylesheet"/>
     <link href="{{ asset('styles/footer/footer.css') }}" rel="stylesheet"/>
     <link href="{{ asset('styles/home/home.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('styles/kontakt/kontakt.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('styles/form/form.css') }}" rel="stylesheet"/>
+    <link rel="icon" href="../../assets/header/fav.png" type="image/icon type">
 {% endblock %}
 
 {% block javascript %}
@@ -21,14 +25,14 @@
 <div class="wrapper">
 
     <div class="logo-container">
-        <img src="assets/header/logo2.svg" alt="dentalcode-logo">
+        <a href="/"><img src="assets/header/logo2.svg" alt="dentalcode-logo"></a>
     </div>
 
     <div class="menu">
         <ul>
             <li class="active" id="loginbtn">Zaloguj się</li>
             <li>Umów wizytę</li>
-            <li>Kontakt</li>
+            <a href="/kontakt"><li>Kontakt</li></a>
         </ul>
         <input class="hamburger" type="image" src="assets/header/hamburger.png">
     </div>
@@ -39,7 +43,7 @@
         <ul>
             <li class="active" id="loginbtn2">Zaloguj się</li>
             <li>Umów wizytę</li>
-            <li>Kontakt</li>
+            <a href="/kontakt"><li>Kontakt</li></a>
         </ul>
     </div>
 
