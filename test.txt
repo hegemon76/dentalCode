@@ -1,0 +1,51 @@
+strona domowa controller
+
+$name = $request->request->get('_imie');
+        $surname = $request->request->get('_nazwisko');
+        $email = $request->request->get('_email');
+        $body = $request->request->get('_tresc');
+
+        $question = new Question();
+        $question->setName($name);
+        $question->setSurname($surname);
+        $question->setEmail($email);
+        $question->setBody($body);
+
+        $em->persist($question);
+        $em->flush();
+
+        /**
+     * @Route("/submit", name="submit", methods="POST")
+     */
+    public function new(EntityManagerInterface $em, Request $request)
+    {
+
+        $name = $request->request->get('_imie');
+        $surname = $request->request->get('_nazwisko');
+        $email = $request->request->get('_email');
+        $body = $request->request->get('_tresc');
+
+        $question = new Question();
+        $question->setName($name);
+        $question->setSurname($surname);
+        $question->setEmail($email);
+        $question->setBody($body);
+
+        $em->persist($question);
+        $em->flush();
+
+        return $this->render('strona_domowa/index.html.twig', [
+            'controller_name' => 'StronaDomowaController',
+        ]);
+    }
+
+
+    FORM
+
+    <form action="submit" method="post">
+    <input type="text" name="imie" placeholder="Imię"/>
+    <input type="text" name="nazwisko"placeholder="Nazwisko"/>
+    <input type="text" name="email"placeholder="E-mail"/>
+    <textarea name="tresc"placeholder="Treść"></textarea>
+    <button type="submit">Wyślij</button>
+</form>
