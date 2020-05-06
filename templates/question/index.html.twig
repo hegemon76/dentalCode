@@ -1,0 +1,38 @@
+
+
+{% block body %}
+
+<h1> Lista pytan </h1>
+
+<table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Imie</th>
+                <th>Email</th>
+                <th>Pytanie</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for question in questions %}
+            <tr>
+                <td>{{ question.id }}</td>
+                <td>{{ question.name }}</td>
+                <td>{{ question.email }}</td>
+                <td>{{ question.body }}</td>
+                <td>
+                    <a href="{{ path('question_show', {'id': question.id}) }}">Pokaz</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Brak pytan w bazie</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
+
+{% include '/footer/footer.html.twig' %}

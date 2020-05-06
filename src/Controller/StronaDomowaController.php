@@ -36,34 +36,5 @@ class StronaDomowaController extends AbstractController
 
         ]);
     }
-
     
-
-    /**
-     * @Route("/submit", name="submit")
-     */
-    public function new(EntityManagerInterface $em, Request $request)
-    {
-        $form = $this->createForm(QuestionType::class);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted()) {
-            $data = $form->getData();
-            $question = new Question();
-            $question->setName($data['name']);
-            $question->setSurname($data['surname']);
-            $question->setEmail($data['email']);
-            $question->setBody($data['body']);
-
-            $em->persist($question);
-            $em->flush();
-
-            return $this->redirectToRoute('strona_kontakt');
-        }
-
-        return $this->render('strona_domowa/index.html.twig', [
-            'questionForm' => $form->createView(),
-        ]);
-    }
 }
