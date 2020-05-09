@@ -1,0 +1,38 @@
+{% include '/header/header.html.twig' %}
+
+{% block title %}Pytanie{% endblock %}
+
+{% block body %}
+    <h1>Pytanie</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ question.id }}</td>
+            </tr>
+            <tr>
+                <th>Imie</th>
+                <td>{{ question.name }}</td>
+            </tr>
+            <tr>
+                <th>Nazwisko</th>
+                <td>{{ question.surname }}</td>
+            </tr>
+            <tr>
+                <th>E-mail</th>
+                <td>{{ question.email }}</td>
+            </tr>
+            <tr>
+                <th>Pytanie</th>
+                <td>{{ question.body }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('questions') }}">Wroc do listy</a>
+
+
+{% endblock %}
+
+{% include '/footer/footer.html.twig' %}

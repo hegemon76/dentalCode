@@ -1,0 +1,74 @@
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form input, form textarea {
+  width: 250px;
+  border: 1px solid #78c1ff;
+  border-radius: 10px;
+  padding: 0 1rem;
+}
+
+form input {
+  height: 40px;
+  margin-bottom: 2rem;
+}
+
+form textarea {
+  min-height: 250px;
+  padding-top: 0.5rem;
+}
+
+form input::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
+  font-family: "Poppins";
+  opacity: 0.5;
+}
+
+form input:-ms-input-placeholder, form textarea:-ms-input-placeholder {
+  font-family: "Poppins";
+  opacity: 0.5;
+}
+
+form input::-ms-input-placeholder, form textarea::-ms-input-placeholder {
+  font-family: "Poppins";
+  opacity: 0.5;
+}
+
+form input::placeholder, form textarea::placeholder {
+  font-family: "Poppins";
+  opacity: 0.5;
+}
+
+form button {
+  margin-top: 1rem;
+  width: 200px;
+  height: 50px;
+  background-color: #78c1ff;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  font-family: "Poppins";
+  border-radius: 30px;
+}
+
+@media (min-width: 600px) {
+  form input, form textarea {
+    width: 450px;
+  }
+}
+
+@media (min-width: 1300px) {
+  form input, form textarea {
+    width: 500px;
+  }
+}
+/*# sourceMappingURL=form.css.map */
