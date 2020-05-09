@@ -99,6 +99,13 @@ myLoop();
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0vockFO1V7mcGf4PCZ7FCIlfyyV6OxQ4&callback=initMap">
       </script>
       
+
+  <script>
+    var labels = document.getElementsByTagName("label");
+    for(var i=0;i<4;i++){
+      labels[i].innerText = " ";
+    }
+  </script>
 {% endblock %}
 </body>
 </html>
