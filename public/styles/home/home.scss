@@ -8,9 +8,10 @@ body{
 }
 
 .slider{
-    margin-top: 100px;
+    //margin-top: 100px;
     width:100%;
-    margin-bottom: 5rem;
+    //margin-bottom: 5rem;
+    //padding-bottom: 5rem;
     background-size: cover;
     background-position: left;
     display: flex;
@@ -28,10 +29,9 @@ body{
     }
 
     @media(min-width:1000px){
-    max-height: 900px;
-    margin-top: 125px;
-    margin-bottom: 0;
+    height: auto;
     justify-content: flex-start;
+    margin-top:125px;
         .mobile-text{
             display: none;
         }
@@ -39,7 +39,7 @@ body{
         img{
             display:block;
             width:100%;
-            max-height:900px;
+            height:auto;
             z-index: -1;
         }
 
@@ -101,7 +101,7 @@ body{
     height:900px;
     background: rgb(120,193,255);
     background: linear-gradient(90deg, rgba(120,193,255,1) 0%, rgba(114,183,242,1) 35%, rgba(27,118,194,1) 100%);
-    margin-bottom: 5rem;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

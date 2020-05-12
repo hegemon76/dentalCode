@@ -2,6 +2,7 @@
 <head>
 <title>Dentalcode</title>
     <meta name="google-site-verification" content="x_an-RZqueWdx1M-QJAQB1VZBtM1T-4eO8q8G1ZZpfw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% block stylesheets %}
     <link href="{{ asset('styles/main.css') }}" rel="stylesheet"/>
     <link href="{{ asset('styles/keyframes.css') }}" rel="stylesheet"/>
@@ -9,6 +10,7 @@
     <link href="{{ asset('styles/footer/footer.css') }}" rel="stylesheet"/>
     <link href="{{ asset('styles/home/home.css') }}" rel="stylesheet"/>
     <link href="{{ asset('styles/kontakt/kontakt.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('styles/admin-panel/admin-panel.css') }}" rel="stylesheet"/>
     <link href="{{ asset('styles/form/form.css') }}" rel="stylesheet"/>
     <link rel="icon" href="../../assets/header/fav.png" type="image/icon type">
 {% endblock %}
@@ -17,7 +19,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
 {% endblock %}
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <header>
@@ -25,7 +26,7 @@
 <div class="wrapper">
 
     <div class="logo-container">
-        <img src="assets/header/logo2.svg" alt="dentalcode-logo">
+        <a href="/home"><img src="assets/header/logo2.svg" alt="dentalcode-logo"></a>
     </div>
 
     <div class="menu">
