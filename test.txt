@@ -49,3 +49,23 @@ $name = $request->request->get('_imie');
     <textarea name="tresc"placeholder="Treść"></textarea>
     <button type="submit">Wyślij</button>
 </form>
+
+      {% for question in questions %}
+             
+             <div class="single-question">
+                <div class="left-wrapper">
+                <p>Imię: {{ question.name }}</p>
+                <p>Nazwisko: {{ question.surname }}</p>
+                <p>E-mail: {{ question.email }}</p>
+                <p>Tresc: {{ question.body }}</p>
+            </div>
+             <div class="right-wrapper">
+                <textarea></textarea>
+                <input type="submit">
+            </div>
+            </div>
+        {% else %}
+            <tr>
+                <td colspan="4">Brak pytan w bazie</td>
+            </tr>
+        {% endfor %}
