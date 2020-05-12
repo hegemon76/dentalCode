@@ -1,0 +1,315 @@
+.admin-panel-controll-window {
+  width: 100%;
+  height: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin-panel-controll-window .left-column {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.admin-panel-controll-window .left-column ul {
+  list-style-type: none;
+  height: 900px;
+}
+
+.admin-panel-controll-window .left-column ul li {
+  width: 150px;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.admin-panel-controll-window .left-column ul .active {
+  background-color: rgba(120, 193, 255, 0.3);
+}
+
+.admin-panel-controll-window .right-column {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  padding: 0 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+}
+
+.admin-panel-controll-window .right-column .questions-box {
+  display: block;
+  max-height: 800px;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.admin-panel-controll-window .right-column .questions-box .single-question {
+  padding: 1rem;
+  border: 2px solid #78c1ff;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.admin-panel-controll-window .right-column .questions-box .single-question .left-wrapper, .admin-panel-controll-window .right-column .questions-box .single-question .right-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.admin-panel-controll-window .right-column .questions-box .single-question .right-wrapper {
+  text-align: right;
+}
+
+.admin-panel-controll-window .right-column .questions-box .single-question .right-wrapper textarea {
+  width: 100%;
+  min-height: 200px;
+  margin: 2rem 0 1rem 0;
+  height: auto;
+}
+
+.admin-panel-controll-window .right-column .questions-box .single-question .right-wrapper input {
+  background-color: #78c1ff;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  padding: 1rem 3rem;
+  border-radius: 100px;
+}
+
+.admin-panel-controll-window .right-column .calendar {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 800px;
+  width: 100%;
+}
+
+.admin-panel-controll-window .right-column .calendar input {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  outline: 0;
+}
+
+.admin-panel-controll-window .right-column .calendar .rotate {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.admin-panel-controll-window .right-column .calendar .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.admin-panel-controll-window .right-column .calendar .wrapper .table-container {
+  text-align: center;
+}
+
+.admin-panel-controll-window .right-column .calendar .wrapper .table-container table {
+  border-spacing: 0.5rem;
+}
+
+.admin-panel-controll-window .right-column .calendar .wrapper .table-container table tr td {
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #78c1ff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.admin-panel-controll-window .right-column .calendar .wrapper .table-container table tr .blocked {
+  border: 0;
+  cursor: auto !important;
+}
+
+.admin-panel-controll-window .right-column .calendar .hidden-box {
+  display: none;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(191, 191, 191, 0.6);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.admin-panel-controll-window .right-column .calendar .hidden-box .hidden-window {
+  left: 20%;
+  width: 60%;
+  height: 600px;
+  background-color: #fff;
+  border: 2px solid #78c1ff;
+  border-radius: 20px;
+}
+
+.admin-panel-controll-window .right-column .calendar .hidden-box .hidden-window .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.admin-panel-controll-window .right-column .calendar .hidden-box .hidden-window .wrapper h2 {
+  text-align: center;
+  -webkit-box-flex: 90%;
+      -ms-flex: 90%;
+          flex: 90%;
+  padding-left: 5%;
+}
+
+.admin-panel-controll-window .right-column .calendar .hidden-box .hidden-window .wrapper input {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-flex: 10%;
+      -ms-flex: 10%;
+          flex: 10%;
+  max-width: 20px;
+  max-height: 20px;
+  border: 0;
+  outline: 0;
+  padding: 1rem 1rem 0 0;
+}
+
+.admin-panel-controll-window .right-column .workers {
+  display: none;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 1rem;
+  min-width: 350px;
+  min-height: 300px;
+  max-height: 600px;
+  margin: 0 5rem;
+  -webkit-box-shadow: 10px 10px 10px lightgray;
+          box-shadow: 10px 10px 10px lightgray;
+  border-top: 3px solid #78c1ff;
+  border-left: 3px solid #78c1ff;
+  border-radius: 20px;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker img {
+  max-width: 300px;
+  border-radius: 50%;
+  margin-bottom: 3rem;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .text-wrapper {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .text-wrapper p {
+  margin-bottom: 2rem;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper button {
+  margin: 0 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper .edit {
+  background-color: rgba(255, 204, 0, 0.5);
+  border: 2px solid #ffcc00;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper .delete {
+  background-color: rgba(255, 43, 0, 0.5);
+  border: 2px solid #ff2b00;
+}
+
+.admin-panel-controll-window .right-column .workers .buttons-wrapper-outer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5rem;
+}
+
+.admin-panel-controll-window .right-column .workers .buttons-wrapper-outer .add {
+  margin: 0 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: rgba(0, 184, 0, 0.5);
+  border: 2px solid #00b800;
+}
+/*# sourceMappingURL=admin-panel.css.map */
