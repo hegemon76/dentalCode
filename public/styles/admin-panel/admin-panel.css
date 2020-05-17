@@ -1,9 +1,9 @@
 .admin-panel-controll-window {
   width: 100%;
-  height: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 4rem 0;
 }
 
 .admin-panel-controll-window .left-column {
@@ -14,7 +14,6 @@
 
 .admin-panel-controll-window .left-column ul {
   list-style-type: none;
-  height: 900px;
 }
 
 .admin-panel-controll-window .left-column ul li {
@@ -229,6 +228,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker {
@@ -243,19 +247,27 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 2rem 1rem;
-  min-width: 350px;
-  min-height: 300px;
-  max-height: 600px;
-  margin: 0 5rem;
+  width: 25%;
+  margin: 0 2rem;
   -webkit-box-shadow: 10px 10px 10px lightgray;
           box-shadow: 10px 10px 10px lightgray;
   border-top: 3px solid #78c1ff;
   border-left: 3px solid #78c1ff;
   border-radius: 20px;
+  margin-bottom: 2rem;
 }
 
-.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker img {
-  max-width: 300px;
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .img-container img {
+  width: 60%;
   border-radius: 50%;
   margin-bottom: 3rem;
 }
@@ -279,9 +291,11 @@
 }
 
 .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper button {
-  margin: 0 1rem;
+  margin: 1vw;
   padding: 1rem;
   border-radius: 10px;
+  width: 40%;
+  text-align: center;
 }
 
 .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper .edit {
@@ -311,5 +325,116 @@
   border-radius: 10px;
   background-color: rgba(0, 184, 0, 0.5);
   border: 2px solid #00b800;
+}
+
+@media (max-width: 1300px) {
+  .admin-panel-controll-window .right-column .calendar {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .admin-panel-controll-window .right-column .calendar .wrapper .table-container .this-month {
+    border-spacing: 0.2rem;
+  }
+  .admin-panel-controll-window .right-column .calendar .wrapper .table-container .this-month td {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .admin-panel-controll-window {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .admin-panel-controll-window .left-column {
+    height: 100px;
+    margin-bottom: 4rem;
+  }
+  .admin-panel-controll-window .left-column ul {
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-left: 0;
+  }
+  .admin-panel-controll-window .right-column {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0;
+  }
+  .admin-panel-controll-window .right-column .questions-box {
+    width: 90%;
+  }
+  .admin-panel-controll-window .right-column .questions-box .single-question {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .admin-panel-controll-window .right-column .questions-box .single-question .left-wrapper {
+    font-size: 12px;
+    margin: 2rem 0 1rem 0;
+  }
+  .admin-panel-controll-window .right-column .calendar {
+    min-height: 600px;
+  }
+  .admin-panel-controll-window .right-column .calendar .wrapper .table-container .this-month td {
+    width: 10vw;
+    height: 10vw;
+    font-size: 12px;
+  }
+  .admin-panel-controll-window .right-column .workers .single-worker .text-wrapper {
+    font-size: 12px;
+  }
+  .admin-panel-controll-window .right-column .workers .single-worker .buttons-wrapper button {
+    width: 30%;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-panel-controll-window .left-column ul li {
+    width: 100px;
+    height: 100px;
+  }
+  .admin-panel-controll-window .right-column .questions-box {
+    height: auto;
+  }
+  .admin-panel-controll-window .right-column .questions-box .single-question {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .admin-panel-controll-window .right-column .questions-box .single-question .right-wrapper {
+    width: 100%;
+  }
+  .admin-panel-controll-window .right-column .calendar .wrapper input {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  .admin-panel-controll-window .right-column .calendar .wrapper .table-container .this-month td {
+    font-size: 8px;
+  }
+  .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker {
+    width: 100%;
+  }
+  .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper button {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=admin-panel.css.map */
