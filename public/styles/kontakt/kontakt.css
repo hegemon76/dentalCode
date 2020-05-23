@@ -45,9 +45,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-left: -3rem;
   list-style-type: none;
 }
@@ -63,17 +63,17 @@
 
 .kontakt-section-1 .wrapper ul .mark:before {
   content: url("../../assets/kontakt/mark.svg");
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .kontakt-section-1 .wrapper ul .phone:before {
   content: url("../../assets/kontakt/phone.svg");
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .kontakt-section-1 .wrapper ul .envelope:before {
   content: url("../../assets/kontakt/envelope.svg");
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 @media (min-width: 1000px) {

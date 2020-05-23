@@ -259,9 +259,10 @@ li[2].onclick = function(){
             n = month[d.getMonth()];
         }
         else{
-            n = month[d.getMonth()+1];
+            n = month[d.getMonth()+number];
         }
         current_month.innerText = n;
+        prev.style.visibility = "visible";
         checknumber();     
     }
     prev.onclick = function(){
@@ -270,9 +271,10 @@ li[2].onclick = function(){
             n = month[d.getMonth()];
         }
         else{
-            n = month[d.getMonth()-1];
+            n = month[d.getMonth()+number];
         }
         current_month.innerText = n;
+        next.style.visibility = "visible";
         checknumber();     
     }
     checknumber();
@@ -316,14 +318,116 @@ function checknumber(){
         td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
     }
     }
-    if(number==1){
-    next.style.visibility = "hidden";
+    else if(number==1){
     for(var i =0;i<30;i++){
         td[i].className = n+" "+(i+1);
         td[i].innerText = i+1;
         td[i].style.backgroundColor = "#fff";
     }
     for(var i = 30;i<=42;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    }
+    else if(number==2){
+    for(var i = 0;i<=1;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    for(var i =2;i<33;i++){
+        td[i].className = n+" "+(i-1);
+        td[i].innerText = i-1;
+        td[i].style.backgroundColor = "#fff";
+    }
+    for(var i = 33;i<=42;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    }
+    else if(number==3){
+    for(var i = 0;i<=4;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    for(var i =5;i<36;i++){
+        td[i].className = n+" "+(i-4);
+        td[i].innerText = i-4;
+        td[i].style.backgroundColor = "#fff";
+    }
+    for(var i = 36;i<=42;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    }
+    else if(number==4){
+    for(var i = 0;i<1;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    for(var i =1;i<31;i++){
+        td[i].className = n+" "+(i);
+        td[i].innerText = i;
+        td[i].style.backgroundColor = "#fff";
+    }
+    for(var i = 31;i<=42;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    }
+    else if(number==5){
+    for(var i = 0;i<3;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    for(var i =3;i<34;i++){
+        td[i].className = n+" "+(i-2);
+        td[i].innerText = i-2;
+        td[i].style.backgroundColor = "#fff";
+    }
+    for(var i = 34;i<=42;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    }
+    else if(number==6){
+    for(var i = 0;i<6;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    for(var i =6;i<36;i++){
+        td[i].className = n+" "+(i-5);
+        td[i].innerText = i-5;
+        td[i].style.backgroundColor = "#fff";
+    }
+    for(var i = 36;i<=42;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    }
+    else if(number==7){
+    next.style.visibility = "hidden";
+    for(var i = 0;i<1;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    for(var i =1;i<32;i++){
+        td[i].className = n+" "+(i);
+        td[i].innerText = i;
+        td[i].style.backgroundColor = "#fff";
+    }
+    for(var i = 32;i<=42;i++){
         td[i].className = "blocked";
         td[i].innerText = " ";
         td[i].style.backgroundColor = "rgba(229,61,61,0.5)";

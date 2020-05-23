@@ -386,14 +386,30 @@ function checknumber(){
         td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
     }
     }
-    if(number==1){
-    next.style.visibility = "hidden";
+    else if(number==1){
     for(var i =0;i<30;i++){
         td[i].className = n+" "+(i+1);
         td[i].innerText = i+1;
         td[i].style.backgroundColor = "#fff";
     }
     for(var i = 30;i<=42;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    }
+    else if(number==2){
+    for(var i = 0;i<=1;i++){
+        td[i].className = "blocked";
+        td[i].innerText = " ";
+        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    }
+    for(var i =2;i<32;i++){
+        td[i].className = n+" "+(i+1);
+        td[i].innerText = i+1;
+        td[i].style.backgroundColor = "#fff";
+    }
+    for(var i = 32;i<=42;i++){
         td[i].className = "blocked";
         td[i].innerText = " ";
         td[i].style.backgroundColor = "rgba(229,61,61,0.5)";

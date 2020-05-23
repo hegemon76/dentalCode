@@ -26,7 +26,7 @@
         line-height: 70px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         margin-left: -3rem;
         list-style-type: none;
         li{
@@ -36,19 +36,19 @@
         .mark{
             &:before{
                 content:url("../../assets/kontakt/mark.svg");
-                margin-right: 1rem;
+                margin-right: 2rem;
             }
         }
         .phone{
             &:before{
                 content:url("../../assets/kontakt/phone.svg");
-                margin-right: 1rem;
+                margin-right: 2rem;
             }
         }
         .envelope{
             &:before{
                 content:url("../../assets/kontakt/envelope.svg");
-                margin-right: 1rem;
+                margin-right: 2rem;
             }
         }
     }
