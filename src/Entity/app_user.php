@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\app_userRepository")
@@ -19,7 +21,13 @@ class app_user implements UserInterface, \Serializable
     private $id;
 
     /**
+     * @ORM\Column(type="array")
+     */
+    private $roles;
+
+    /**
      * @ORM\Column(type="string", length=25, unique=true)
+     * @Assert\NotBlank()
      */
     private $username;
 
@@ -52,6 +60,13 @@ class app_user implements UserInterface, \Serializable
      * @ORM\Column(type="string", length=30)
      */
     private $password;
+
+     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
+
 
     public function getId(): ?int
     {
@@ -101,6 +116,7 @@ class app_user implements UserInterface, \Serializable
     public function __construct()
     {
         $this->isActive = true;
+        $this->roles = array('ROLE_USER');
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid('', true));
     }
@@ -151,6 +167,16 @@ class app_user implements UserInterface, \Serializable
         $this->password = $password;
 
         return $this;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
     }
 
     /** @see \Serializable::serialize() */
