@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\app_user;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface;
+use Doctrine\ORM\EntityRepository;
 
 /**
  * @method User|null find($id, $lockMode = null, $lockVersion = null)
@@ -12,17 +14,17 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method User[]    findAll()
  * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class UserRepository extends ServiceEntityRepository
+class app_userRepository extends ServiceEntityRepository implements UserLoaderInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, app_user::class);
     }
 
-    // /**
-    //  * @return User[] Returns an array of User objects
-    //  */
-    /*
+     /**
+      * @return User[] Returns an array of User objects
+      */
+    
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('u')
@@ -34,10 +36,10 @@ class UserRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+    
 
-    /*
-    public function findOneBySomeField($value): ?User
+    
+    public function findOneBySomeField($value): ?app_user
     {
         return $this->createQueryBuilder('u')
             ->andWhere('u.exampleField = :val')
@@ -46,5 +48,18 @@ class UserRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+
+    public function loadUserByUsername($usernameOrEmail)
+    {
+        return $this->createQuery(
+            'SELECT u
+            FROM App\Entity\app_user u
+            WHERE u.username = :query
+            or u.email = :query'
+        )
+        ->setParameter('query', $usernameOrEmail)
+        ->getQuery()
+        ->getOneOrNullResult();
+    }
+    
 }

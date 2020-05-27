@@ -69,3 +69,5 @@ $name = $request->request->get('_imie');
                 <td colspan="4">Brak pytan w bazie</td>
             </tr>
         {% endfor %}
+
+        {{ form_row(registrationForm.plainPassword) }}
