@@ -19,7 +19,7 @@ class app_user implements UserInterface, \Serializable
     private $id;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="json")
      */
     private $roles;
 
@@ -78,11 +78,18 @@ class app_user implements UserInterface, \Serializable
         return null;
     }
 
-    public function getRoles()
+    public function getRoles(): array
     {
         $roles = $this->roles;
         $roles[] = 'ROLE_USER';
-        return array($roles);
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 
     public function eraseCredentials()
