@@ -71,6 +71,7 @@ class AppUserAuthenticator extends AbstractFormLoginAuthenticator implements Pas
 
         if (!$user) {
             // fail authentication with a custom error
+            //KOMENTARZ AKSDKSAD
             throw new CustomUserMessageAuthenticationException('Username could not be found.');
         }
 

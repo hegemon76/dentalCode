@@ -11,6 +11,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Controller\RegistrationController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use App\Controller\QuestionController;
+use App\Form\RegistrationFormType;
 
 class StronaDomowaController extends AbstractController
 {
@@ -22,7 +23,8 @@ class StronaDomowaController extends AbstractController
     {
        
         $questionForm = $this->createForm(QuestionType::class);
-
+        $register = $this->createForm(RegistrationFormType::class);
+        
         $questionForm->handleRequest($request);
 
         if ($questionForm->isSubmitted() && $questionForm->isValid()) {
@@ -34,6 +36,7 @@ class StronaDomowaController extends AbstractController
         return $this->render('strona_domowa/index.html.twig', [
             'controller_name' => 'StronaDomowaController',
             'questionForm' => $questionForm->createView(),
+            'registrationForm' => $register->createView(),
 
         ]);
     }
