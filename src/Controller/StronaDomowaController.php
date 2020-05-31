@@ -8,6 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Controller\RegistrationController;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use App\Controller\QuestionController;
 
 class StronaDomowaController extends AbstractController
 {
@@ -15,24 +18,22 @@ class StronaDomowaController extends AbstractController
     /**
      * @Route("/home", name="strona_domowa")
      */
-    public function index(EntityManagerInterface $em, Request $request)
+    public function index(EntityManagerInterface $em, Request $request, QuestionController $qc)
     {
-        $form = $this->createForm(QuestionType::class);
+       
+        $questionForm = $this->createForm(QuestionType::class);
 
-        $form->handleRequest($request);
+        $questionForm->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $question = $form->getData();
-
-            $em->persist($question);
-            $em->flush();
-
+        if ($questionForm->isSubmitted() && $questionForm->isValid()) {
+            $qc->newQuestion($em,$request);
             return $this->redirectToRoute('strona_domowa');
         }
 
+        
         return $this->render('strona_domowa/index.html.twig', [
             'controller_name' => 'StronaDomowaController',
-            'questionForm' => $form->createView(),
+            'questionForm' => $questionForm->createView(),
 
         ]);
     }
