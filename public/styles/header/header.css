@@ -25,12 +25,26 @@ header .login-container {
           align-items: center;
 }
 
+header .login-container h4 {
+  text-align: center;
+}
+
 header .login-container .login-box, header .login-container .register-box {
-  width: 80%;
-  height: 400px;
+  width: 90%;
+  min-height: 400px;
   background-color: #fff;
   border: 3px solid #78c1ff;
   border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 header .login-container .login-box .close-row, header .login-container .register-box .close-row {
@@ -49,7 +63,7 @@ header .login-container .login-box .close-row input[type="image"], header .login
   outline: 0;
 }
 
-header .login-container .login-box form, header .login-container .register-box form {
+header .login-container .login-box #loginForm, header .login-container .login-box #registration_form, header .login-container .register-box #loginForm, header .login-container .register-box #registration_form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,39 +77,39 @@ header .login-container .login-box form, header .login-container .register-box f
   padding: 2rem;
 }
 
-header .login-container .login-box form input, header .login-container .register-box form input {
+header .login-container .login-box #loginForm input, header .login-container .login-box #registration_form input, header .login-container .register-box #loginForm input, header .login-container .register-box #registration_form input {
   margin: 0.5rem 0;
   padding-left: 1rem;
   height: 30px;
 }
 
-header .login-container .login-box form input::-webkit-input-placeholder, header .login-container .register-box form input::-webkit-input-placeholder {
+header .login-container .login-box #loginForm input::-webkit-input-placeholder, header .login-container .login-box #registration_form input::-webkit-input-placeholder, header .login-container .register-box #loginForm input::-webkit-input-placeholder, header .login-container .register-box #registration_form input::-webkit-input-placeholder {
   font-family: "Poppins";
   opacity: 0.5;
 }
 
-header .login-container .login-box form input:-ms-input-placeholder, header .login-container .register-box form input:-ms-input-placeholder {
+header .login-container .login-box #loginForm input:-ms-input-placeholder, header .login-container .login-box #registration_form input:-ms-input-placeholder, header .login-container .register-box #loginForm input:-ms-input-placeholder, header .login-container .register-box #registration_form input:-ms-input-placeholder {
   font-family: "Poppins";
   opacity: 0.5;
 }
 
-header .login-container .login-box form input::-ms-input-placeholder, header .login-container .register-box form input::-ms-input-placeholder {
+header .login-container .login-box #loginForm input::-ms-input-placeholder, header .login-container .login-box #registration_form input::-ms-input-placeholder, header .login-container .register-box #loginForm input::-ms-input-placeholder, header .login-container .register-box #registration_form input::-ms-input-placeholder {
   font-family: "Poppins";
   opacity: 0.5;
 }
 
-header .login-container .login-box form input::placeholder, header .login-container .register-box form input::placeholder {
+header .login-container .login-box #loginForm input::placeholder, header .login-container .login-box #registration_form input::placeholder, header .login-container .register-box #loginForm input::placeholder, header .login-container .register-box #registration_form input::placeholder {
   font-family: "Poppins";
   opacity: 0.5;
 }
 
-header .login-container .login-box form .submit-row, header .login-container .register-box form .submit-row {
+header .login-container .login-box #loginForm .submit-row, header .login-container .login-box #registration_form .submit-row, header .login-container .register-box #loginForm .submit-row, header .login-container .register-box #registration_form .submit-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .login-container .login-box form .submit-row input[type="submit"], header .login-container .register-box form .submit-row input[type="submit"] {
+header .login-container .login-box #loginForm .submit-row input[type="submit"], header .login-container .login-box #registration_form .submit-row input[type="submit"], header .login-container .register-box #loginForm .submit-row input[type="submit"], header .login-container .register-box #registration_form .submit-row input[type="submit"] {
   background-color: #78c1ff;
   border: 0;
   border-radius: 10px;
@@ -107,12 +121,12 @@ header .login-container .login-box form .submit-row input[type="submit"], header
   cursor: pointer;
 }
 
-header .login-container .login-box form a, header .login-container .register-box form a {
+header .login-container .login-box #loginForm a, header .login-container .login-box #registration_form a, header .login-container .register-box #loginForm a, header .login-container .register-box #registration_form a {
   font-size: 12px;
 }
 
 @media (min-width: 600px) {
-  header .login-container .login-box form input, header .login-container .register-box form input {
+  header .login-container .login-box #loginForm input, header .login-container .login-box #registration_form input, header .login-container .register-box #loginForm input, header .login-container .register-box #registration_form input {
     width: 300px;
     height: 40px;
   }
@@ -130,10 +144,15 @@ header .login-container .login-box form a, header .login-container .register-box
     height: 600px;
     width: 600px;
   }
-  header .login-container .login-box form, header .login-container .register-box form {
+  header .login-container .login-box #loginForm, header .login-container .login-box #registration_form, header .login-container .register-box #loginForm, header .login-container .register-box #registration_form {
     height: 500px;
     margin: 50px 0;
   }
+}
+
+header .login-container .register-box {
+  display: none;
+  height: 700px;
 }
 
 header .wrapper {

@@ -3,11 +3,12 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
 
     {{ form_start(registrationForm) }}
-        
         {{ form_widget(registrationForm)}}
-        <button class="btn">Register</button>
+        <div class="submit-row">
+        <input type="submit" value="Zarejestruj się">
+        </div>
+        <a id="login" class="login" onclick="login()">Zaloguj się</a>
     {{ form_end(registrationForm) }}
 {% endblock %}
