@@ -31,6 +31,7 @@
 
     <div class="menu">
         <ul>
+            <li class="active" id="logoutnbtn">Wyloguj się</li>
             <li class="active" id="loginbtn">Zaloguj się</li>
             <li>Umów wizytę</li>
             <a href="/kontakt"><li>Kontakt</li></a>
@@ -52,7 +53,7 @@
 
         <div class="login-box">
             <div class="close-row">
-                <input class="close" type="image" src="assets/home/close.png">
+                <input class="close" type="image" src="assets/home/close.png" onclick="closeLoginContainer()">
             </div>
 
             <form action="#">
@@ -62,7 +63,7 @@
                 <div class="submit-row">
                     <input type="submit" value="Zaloguj się"></input>
                 </div>
-                <a href="/register">Zarejestruj się</a>
+                <a id="register" class="register" onclick="register()">Zarejestruj się</a>
             </form>
         </div>
     

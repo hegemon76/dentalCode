@@ -16,7 +16,7 @@ header{
         display: none;
         justify-content: center;
         align-items: center;
-        .login-box{
+        .login-box,.register-box{
             width: 80%;
             height: 400px;
             background-color: #fff;
@@ -70,7 +70,7 @@ header{
         }
 
         @media (min-width:600px){
-            .login-box{
+            .login-box,.register-box{
                 form{
                     input{
                         width:300px;
@@ -81,7 +81,7 @@ header{
         }
 
         @media(min-width:1000px){
-            .login-box{
+            .login-box,.register-box{
                 display: flex;
                 flex-direction: column;
                 height: 600px;

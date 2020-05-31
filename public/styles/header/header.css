@@ -25,7 +25,7 @@ header .login-container {
           align-items: center;
 }
 
-header .login-container .login-box {
+header .login-container .login-box, header .login-container .register-box {
   width: 80%;
   height: 400px;
   background-color: #fff;
@@ -33,7 +33,7 @@ header .login-container .login-box {
   border-radius: 20px;
 }
 
-header .login-container .login-box .close-row {
+header .login-container .login-box .close-row, header .login-container .register-box .close-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,13 +43,13 @@ header .login-container .login-box .close-row {
   padding: 1rem;
 }
 
-header .login-container .login-box .close-row input[type="image"] {
+header .login-container .login-box .close-row input[type="image"], header .login-container .register-box .close-row input[type="image"] {
   max-width: 20px;
   border: 0;
   outline: 0;
 }
 
-header .login-container .login-box form {
+header .login-container .login-box form, header .login-container .register-box form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,39 +63,39 @@ header .login-container .login-box form {
   padding: 2rem;
 }
 
-header .login-container .login-box form input {
+header .login-container .login-box form input, header .login-container .register-box form input {
   margin: 0.5rem 0;
   padding-left: 1rem;
   height: 30px;
 }
 
-header .login-container .login-box form input::-webkit-input-placeholder {
+header .login-container .login-box form input::-webkit-input-placeholder, header .login-container .register-box form input::-webkit-input-placeholder {
   font-family: "Poppins";
   opacity: 0.5;
 }
 
-header .login-container .login-box form input:-ms-input-placeholder {
+header .login-container .login-box form input:-ms-input-placeholder, header .login-container .register-box form input:-ms-input-placeholder {
   font-family: "Poppins";
   opacity: 0.5;
 }
 
-header .login-container .login-box form input::-ms-input-placeholder {
+header .login-container .login-box form input::-ms-input-placeholder, header .login-container .register-box form input::-ms-input-placeholder {
   font-family: "Poppins";
   opacity: 0.5;
 }
 
-header .login-container .login-box form input::placeholder {
+header .login-container .login-box form input::placeholder, header .login-container .register-box form input::placeholder {
   font-family: "Poppins";
   opacity: 0.5;
 }
 
-header .login-container .login-box form .submit-row {
+header .login-container .login-box form .submit-row, header .login-container .register-box form .submit-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .login-container .login-box form .submit-row input[type="submit"] {
+header .login-container .login-box form .submit-row input[type="submit"], header .login-container .register-box form .submit-row input[type="submit"] {
   background-color: #78c1ff;
   border: 0;
   border-radius: 10px;
@@ -107,19 +107,19 @@ header .login-container .login-box form .submit-row input[type="submit"] {
   cursor: pointer;
 }
 
-header .login-container .login-box form a {
+header .login-container .login-box form a, header .login-container .register-box form a {
   font-size: 12px;
 }
 
 @media (min-width: 600px) {
-  header .login-container .login-box form input {
+  header .login-container .login-box form input, header .login-container .register-box form input {
     width: 300px;
     height: 40px;
   }
 }
 
 @media (min-width: 1000px) {
-  header .login-container .login-box {
+  header .login-container .login-box, header .login-container .register-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -130,7 +130,7 @@ header .login-container .login-box form a {
     height: 600px;
     width: 600px;
   }
-  header .login-container .login-box form {
+  header .login-container .login-box form, header .login-container .register-box form {
     height: 500px;
     margin: 50px 0;
   }
