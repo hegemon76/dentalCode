@@ -10,4 +10,8 @@ body a {
   text-decoration: none !important;
   cursor: pointer;
 }
+
+body label {
+  display: none;
+}
 /*# sourceMappingURL=main.css.map */

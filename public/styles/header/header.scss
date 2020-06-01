@@ -19,13 +19,16 @@ header{
         h4{
             text-align: center;
         }
+        .login-box{
+            height: 450px;
+        }
         .login-box,.register-box{
             width: 90%;
             min-height: 400px;
             background-color: #fff;
             border: 3px solid #78c1ff;
             border-radius: 20px;
-            display: flex;
+            //display: flex;
             justify-content: flex-start;
             flex-direction: column;
             .close-row{
@@ -34,6 +37,7 @@ header{
                 padding: 1rem;
                 input[type="image"]{
                     max-width: 20px;
+                    max-height: 20px;
                     border:0;
                     outline:0;
                 }
@@ -54,23 +58,28 @@ header{
                     font-family:"Poppins";
                     opacity: 0.5;
                 }
-
-                .submit-row{
-                    display: flex;
-                    input[type="submit"]{
-                        background-color: #78c1ff;
-                        border:0;
-                        border-radius: 10px;
-                        outline: 0;
-                        padding: 0.7rem;
-                        margin: 1rem 0;
-                        color:#fff;
-                        height: 40px;
-                        cursor: pointer;
-                    }
-                }
                 a{
                     font-size: 12px;
+                }
+            }
+            #registration_form{
+                padding-bottom: 0;
+            }
+            a{
+                font-size: 12px;
+            }
+            .submit-row{
+                display: flex;
+                input[type="submit"]{
+                    background-color: #78c1ff !important;
+                    border:0;
+                    border-radius: 10px;
+                    outline: 0;
+                    padding: 0.7rem;
+                    margin: 1rem 0;
+                    color:#fff;
+                    height: 40px;
+                    cursor: pointer;
                 }
             }
         }
@@ -83,6 +92,10 @@ header{
                         height: 40px;
                     }
                 }
+                input{
+                    width:300px;
+                    height: 40px;
+                }
             }
         }
 
@@ -90,17 +103,18 @@ header{
             .login-box,.register-box{
                 display: flex;
                 flex-direction: column;
-                height: 600px;
+                justify-content: flex-start;
+                //height: 500px;
                 width:600px;
-                #loginForm,#registration_form{
-                    height: 500px;
-                    margin: 50px 0;
-                }
             }
         }
         .register-box{
             display:none;
-            height: 700px;
+            height:800px;
+            @media(max-width:1000px){
+            height:650px;
+            }
+            
         }
     }
 

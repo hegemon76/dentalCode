@@ -29,15 +29,16 @@ header .login-container h4 {
   text-align: center;
 }
 
+header .login-container .login-box {
+  height: 450px;
+}
+
 header .login-container .login-box, header .login-container .register-box {
   width: 90%;
   min-height: 400px;
   background-color: #fff;
   border: 3px solid #78c1ff;
   border-radius: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -59,6 +60,7 @@ header .login-container .login-box .close-row, header .login-container .register
 
 header .login-container .login-box .close-row input[type="image"], header .login-container .register-box .close-row input[type="image"] {
   max-width: 20px;
+  max-height: 20px;
   border: 0;
   outline: 0;
 }
@@ -103,14 +105,26 @@ header .login-container .login-box #loginForm input::placeholder, header .login-
   opacity: 0.5;
 }
 
-header .login-container .login-box #loginForm .submit-row, header .login-container .login-box #registration_form .submit-row, header .login-container .register-box #loginForm .submit-row, header .login-container .register-box #registration_form .submit-row {
+header .login-container .login-box #loginForm a, header .login-container .login-box #registration_form a, header .login-container .register-box #loginForm a, header .login-container .register-box #registration_form a {
+  font-size: 12px;
+}
+
+header .login-container .login-box #registration_form, header .login-container .register-box #registration_form {
+  padding-bottom: 0;
+}
+
+header .login-container .login-box a, header .login-container .register-box a {
+  font-size: 12px;
+}
+
+header .login-container .login-box .submit-row, header .login-container .register-box .submit-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .login-container .login-box #loginForm .submit-row input[type="submit"], header .login-container .login-box #registration_form .submit-row input[type="submit"], header .login-container .register-box #loginForm .submit-row input[type="submit"], header .login-container .register-box #registration_form .submit-row input[type="submit"] {
-  background-color: #78c1ff;
+header .login-container .login-box .submit-row input[type="submit"], header .login-container .register-box .submit-row input[type="submit"] {
+  background-color: #78c1ff !important;
   border: 0;
   border-radius: 10px;
   outline: 0;
@@ -121,12 +135,12 @@ header .login-container .login-box #loginForm .submit-row input[type="submit"], 
   cursor: pointer;
 }
 
-header .login-container .login-box #loginForm a, header .login-container .login-box #registration_form a, header .login-container .register-box #loginForm a, header .login-container .register-box #registration_form a {
-  font-size: 12px;
-}
-
 @media (min-width: 600px) {
   header .login-container .login-box #loginForm input, header .login-container .login-box #registration_form input, header .login-container .register-box #loginForm input, header .login-container .register-box #registration_form input {
+    width: 300px;
+    height: 40px;
+  }
+  header .login-container .login-box input, header .login-container .register-box input {
     width: 300px;
     height: 40px;
   }
@@ -141,18 +155,22 @@ header .login-container .login-box #loginForm a, header .login-container .login-
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 600px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     width: 600px;
-  }
-  header .login-container .login-box #loginForm, header .login-container .login-box #registration_form, header .login-container .register-box #loginForm, header .login-container .register-box #registration_form {
-    height: 500px;
-    margin: 50px 0;
   }
 }
 
 header .login-container .register-box {
   display: none;
-  height: 700px;
+  height: 800px;
+}
+
+@media (max-width: 1000px) {
+  header .login-container .register-box {
+    height: 650px;
+  }
 }
 
 header .wrapper {

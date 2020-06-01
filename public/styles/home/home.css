@@ -27,6 +27,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 10vh 0;
 }
 
 .slider .mobile-text {
@@ -41,6 +42,7 @@ body {
 
 @media (min-width: 1000px) {
   .slider {
+    padding-top: 0;
     height: auto;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -96,6 +98,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .home-section-1 .left-column .img-container .wrapper img {
@@ -279,12 +284,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .home-section-2 ul .wrapper li:before {
-  content: url(../../assets/home/tooth.svg);
-  margin-left: -40px;
-  margin-right: 40px;
+  display: none;
 }
 
 @media (min-width: 1000px) {
@@ -299,6 +305,17 @@ body {
   .home-section-2 ul .wrapper {
     margin: 0 10vw;
     line-height: 150px;
+  }
+  .home-section-2 ul .wrapper li {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .home-section-2 ul .wrapper li:before {
+    display: block;
+    content: url(../../assets/home/tooth.svg);
+    margin-left: -40px;
+    margin-right: 40px;
   }
   .home-section-2 ul .wrapper li:hover::before {
     -webkit-animation: shake 1s;
