@@ -1,0 +1,166 @@
+.doctor-section {
+  min-height: 900px;
+  width: 100%;
+  padding-top: 7rem;
+}
+
+.doctor-section .single-doctor {
+  width: 90%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.doctor-section .single-doctor button {
+  width: 150px;
+  height: 50px;
+  background-color: #78c1FF;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.doctor-section .single-doctor button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 4px 8px 15px #999;
+          box-shadow: 4px 8px 15px #999;
+  background-color: #5dbdff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.doctor-section .single-doctor .img-container {
+  text-align: center;
+}
+
+.doctor-section .single-doctor .img-container img {
+  height: auto;
+  min-width: 200px;
+  max-width: 50%;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 600px) {
+  .doctor-section .single-doctor {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .doctor-section .single-doctor .img-container, .doctor-section .single-doctor .dane {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .doctor-section .single-doctor .img-container img {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .doctor-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding-top: 4rem;
+    margin-bottom: 1rem;
+  }
+  .doctor-section .single-doctor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 30%;
+    margin: 3rem 1rem;
+  }
+  .doctor-section .single-doctor .img-container {
+    width: 100%;
+    height: auto;
+  }
+  .doctor-section .single-doctor .img-container img {
+    width: 100%;
+  }
+}
+
+.calendar-section {
+  display: none;
+  min-height: 900px;
+  width: 100%;
+  padding-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-section .calendar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 800px;
+  width: 100%;
+}
+
+.calendar-section .calendar input {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  outline: 0;
+}
+
+.calendar-section .calendar .rotate {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.calendar-section .calendar .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calendar-section .calendar .wrapper .table-container {
+  text-align: center;
+}
+
+.calendar-section .calendar .wrapper .table-container table {
+  border-spacing: 0.5rem;
+}
+
+.calendar-section .calendar .wrapper .table-container table tr td {
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #78c1ff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.calendar-section .calendar .wrapper .table-container table tr .blocked {
+  border: 0;
+  cursor: auto !important;
+}
+/*# sourceMappingURL=wizyty.css.map */

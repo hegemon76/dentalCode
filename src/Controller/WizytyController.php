@@ -2,26 +2,29 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Question;
 use App\Form\QuestionType;
-use Symfony\Component\HttpFoundation\Request;
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Controller\RegistrationController;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use App\Controller\QuestionController;
 use App\Form\RegistrationFormType;
 
-class KontaktController extends AbstractController
+class WizytyController extends AbstractController
 {
+
     /**
-     * @Route("/kontakt", name="strona_kontakt")
+     * @Route("/wizyty", name="strona_wizyty")
      */
-    public function kontakt(EntityManagerInterface $em, Request $request, QuestionController $qc)
+    public function wizyty(EntityManagerInterface $em, Request $request, QuestionController $qc)
     {
+       
         $questionForm = $this->createForm(QuestionType::class);
         $register = $this->createForm(RegistrationFormType::class);
-
+        
         $questionForm->handleRequest($request);
 
         if ($questionForm->isSubmitted() && $questionForm->isValid()) {
@@ -30,12 +33,12 @@ class KontaktController extends AbstractController
         }
 
         
-
-        return $this->render('kontakt/kontakt.html.twig', [
-            'controller_name' => 'KontaktController',
+        return $this->render('wizyty/wizyty.html.twig', [
+            'controller_name' => 'WizytyController',
             'questionForm' => $questionForm->createView(),
             'registrationForm' => $register->createView(),
+
         ]);
     }
+    
 }
-?>

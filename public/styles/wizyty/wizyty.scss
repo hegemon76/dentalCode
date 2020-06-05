@@ -1,0 +1,127 @@
+.doctor-section{
+    min-height: 900px;
+    width: 100%;
+    padding-top: 7rem;
+
+    .single-doctor{
+        width: 90%;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 3rem;
+
+        button{
+            width:150px;
+            height: 50px;
+            background-color: #78c1FF;
+            color:#fff;
+            border:0;
+            outline: 0;
+            border-radius:30px;
+            font-weight: bold;
+            &:hover{
+                cursor: pointer;
+                box-shadow: 4px 8px 15px #999;
+                background-color: #5dbdff;
+                transition: all 0.2s;
+            }
+        }
+        .img-container{
+            text-align: center;
+        img{
+            height: auto;
+            min-width: 200px;
+            max-width: 50%;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+    }
+    }
+
+    @media(min-width:600px){
+        .single-doctor{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            .img-container,.dane{
+                flex:1;
+            }
+            .img-container{
+            img{
+                max-width: 300px;
+            }
+        }
+        }
+    }
+
+    @media(min-width:1000px){
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-top: 4rem;
+        margin-bottom: 1rem;
+        .single-doctor{
+            flex-direction: column;
+            width:30%;
+            margin: 3rem 1rem;
+
+            .img-container{
+                width:100%;
+                height: auto;
+                img{
+                    width:100%;
+                }
+            }
+        }
+    }
+}
+
+.calendar-section{
+    display: none;
+    min-height: 900px;
+    width:100%;
+    padding-top: 4rem;
+    margin-bottom: 1rem;
+
+    .calendar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-height: 800px;
+        width: 100%;
+        input{
+            width:50px;
+            height: 50px;
+            border: 0;
+            outline: 0;
+        }
+        .rotate{
+            transform: rotate(180deg);
+        }
+        .wrapper{
+            display: flex;
+            align-items: center;
+
+        .table-container{
+            text-align: center;
+        table{
+            border-spacing: 0.5rem;
+            tr{
+                td{
+                    text-align: center;
+                    width:100px;
+                    height: 100px;
+                    border:2px solid #78c1ff;
+                    border-radius: 10px;
+                    cursor: pointer;
+                }
+                .blocked{
+                    border:0;
+                    cursor: auto !important;
+                }
+            }
+        }
+    }
+    }
+    }}

@@ -12,6 +12,7 @@
     <link href="{{ asset('styles/kontakt/kontakt.css') }}" rel="stylesheet"/>
     <link href="{{ asset('styles/admin-panel/admin-panel.css') }}" rel="stylesheet"/>
     <link href="{{ asset('styles/form/form.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('styles/wizyty/wizyty.css') }}" rel="stylesheet"/>
     <link rel="icon" href="../../assets/header/fav.png" type="image/icon type">
 {% endblock %}
 
@@ -33,7 +34,7 @@
         <ul>
             <li class="active" id="logoutnbtn">Wyloguj się</li>
             <li class="active" id="loginbtn">Zaloguj się</li>
-            <li>Umów wizytę</li>
+            <a href="/wizyty"><li>Umów wizytę</li></a>
             <a href="/kontakt"><li>Kontakt</li></a>
         </ul>
         <input class="hamburger" type="image" src="assets/header/hamburger.png">
@@ -44,7 +45,7 @@
     <div class="hidden-menu">
         <ul>
             <li class="active" id="loginbtn2">Zaloguj się</li>
-            <li>Umów wizytę</li>
+            <a href="/wizyty"><li>Umów wizytę</li></a>
             <a href="/kontakt"><li>Kontakt</li></a>
         </ul>
     </div>

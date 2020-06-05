@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\DoctorType;
+use App\Form\RegistrationFormType;
 
 class AdminPanelController extends AbstractController
 {
@@ -18,9 +19,12 @@ class AdminPanelController extends AbstractController
      */
     public function panel(QuestionRepository $questionsRepository)
     {
+        $register = $this->createForm(RegistrationFormType::class);
+
         return $this->render('admin-panel/admin2.html.twig', [
             'controller_name' => 'AdminPanelController',
             'questions' => $questionsRepository->findAll(),
+            'registrationForm' => $register->createView(),
         ]);
     }
 

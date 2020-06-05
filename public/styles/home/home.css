@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
