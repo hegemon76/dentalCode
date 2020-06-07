@@ -115,13 +115,126 @@
                     border:2px solid #78c1ff;
                     border-radius: 10px;
                     cursor: pointer;
+
+                    &:hover{
+                        background-color: #78c1ff !important;
+                        color:#fff;
+                        transition: all 0.2s;
+                        cursor: pointer;
+                    }
                 }
                 .blocked{
                     border:0;
                     cursor: auto !important;
+
+                    &:hover{
+                        background-color: rgba(229, 61, 61, 0.5) !important;
+                    }
                 }
             }
         }
     }
     }
-    }}
+    }
+
+    @media(max-width:1300px){
+        height: 500px;
+        .calendar{
+            justify-content: center;
+            .wrapper{
+                .table-container{
+                    .this-month{
+                        border-spacing: 0.2rem;
+                        td{
+                            width:80px;
+                            height: 80px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width:1000px){
+        .calendar{
+            min-height: 600px;
+            .wrapper{
+                .table-container{
+                    .this-month{
+                        td{
+                            width: 10vw;
+                            height: 10vw;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width:600px){
+        height: 500px;
+        .calendar{
+            .wrapper{
+                input{
+                    transform: scale(0.5);
+                }
+                .table-container{
+
+                    .this-month{
+                        td{
+                            font-size: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width:400px){
+        height: 400px;
+    }
+}
+
+.hours-section{
+    min-height: 900px;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    table{
+        border-spacing: 1rem;
+
+        td{
+            border:2px solid #78c1ff;
+            padding: 2rem;
+            width:100px;
+            text-align: center;
+            font-size: 24px;
+            border-radius: 20px;
+
+            &:hover{
+                transform: scale(1.1);
+                background-color: #78c1ff;
+                color:#fff;
+                transition: all 0.2s;
+                cursor: pointer;
+            }
+        }
+    }
+
+    @media(max-width:1000px){
+        align-items: flex-start;
+        table{
+            tr{
+                display: flex;
+                flex-direction: column;
+
+                td{
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

@@ -159,8 +159,123 @@
   cursor: pointer;
 }
 
+.calendar-section .calendar .wrapper .table-container table tr td:hover {
+  background-color: #78c1ff !important;
+  color: #fff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
 .calendar-section .calendar .wrapper .table-container table tr .blocked {
   border: 0;
   cursor: auto !important;
+}
+
+.calendar-section .calendar .wrapper .table-container table tr .blocked:hover {
+  background-color: rgba(229, 61, 61, 0.5) !important;
+}
+
+@media (max-width: 1300px) {
+  .calendar-section {
+    height: 500px;
+  }
+  .calendar-section .calendar {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .calendar-section .calendar .wrapper .table-container .this-month {
+    border-spacing: 0.2rem;
+  }
+  .calendar-section .calendar .wrapper .table-container .this-month td {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .calendar-section .calendar {
+    min-height: 600px;
+  }
+  .calendar-section .calendar .wrapper .table-container .this-month td {
+    width: 10vw;
+    height: 10vw;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .calendar-section {
+    height: 500px;
+  }
+  .calendar-section .calendar .wrapper input {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  .calendar-section .calendar .wrapper .table-container .this-month td {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .calendar-section {
+    height: 400px;
+  }
+}
+
+.hours-section {
+  min-height: 900px;
+  width: 100%;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hours-section table {
+  border-spacing: 1rem;
+}
+
+.hours-section table td {
+  border: 2px solid #78c1ff;
+  padding: 2rem;
+  width: 100px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 20px;
+}
+
+.hours-section table td:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #78c1ff;
+  color: #fff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .hours-section {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .hours-section table tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .hours-section table tr td {
+    margin-bottom: 1rem;
+  }
 }
 /*# sourceMappingURL=wizyty.css.map */
