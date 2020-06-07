@@ -1,5 +1,4 @@
 .doctor-section{
-    min-height: 900px;
     width: 100%;
     padding-top: 7rem;
 
@@ -55,6 +54,7 @@
     }
 
     @media(min-width:1000px){
+        min-height: 900px;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -78,10 +78,10 @@
 
 .calendar-section{
     display: none;
-    min-height: 900px;
+    //min-height: 900px;
     width:100%;
     padding-top: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 
     .calendar{
         display: flex;
@@ -138,7 +138,6 @@
     }
 
     @media(max-width:1300px){
-        height: 500px;
         .calendar{
             justify-content: center;
             .wrapper{
@@ -156,8 +155,9 @@
     }
 
     @media(max-width:1000px){
+        //min-height: unset;
         .calendar{
-            min-height: 600px;
+            //min-height: 600px;
             .wrapper{
                 .table-container{
                     .this-month{
@@ -173,7 +173,7 @@
     }
 
     @media(max-width:600px){
-        height: 500px;
+       //height: 500px;
         .calendar{
             .wrapper{
                 input{
@@ -192,16 +192,17 @@
     }
 
     @media(max-width:400px){
-        height: 400px;
+       // height: 400px;
     }
 }
 
 .hours-section{
-    min-height: 900px;
+    //min-height: 900px;
     width: 100%;
     display: none;
     justify-content: center;
     align-items: center;
+    padding: 3rem 0;
 
     table{
         border-spacing: 1rem;
@@ -225,14 +226,41 @@
     }
 
     @media(max-width:1000px){
-        align-items: flex-start;
+        //align-items: flex-start;
         table{
             tr{
-                display: flex;
-                flex-direction: column;
+                //display: flex;
+                //flex-direction: column;
 
                 td{
-                    margin-bottom: 1rem;
+                    //margin-bottom: 1rem;
+                    width: 80px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    @media(max-width:700px){
+        table{
+            border-spacing: 0.5rem;
+            tr{
+                td{
+                    width:20%;
+                    padding: 1rem;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    @media(max-width:400px){
+        table{
+            border-spacing: 0.3rem;
+            tr{
+                td{
+                    width:20%;
+                    padding: 0.8rem;
                 }
             }
         }
