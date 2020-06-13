@@ -23,9 +23,19 @@ form input {
   margin-bottom: 2rem;
 }
 
+form input:focus {
+  border: 2px solid #167eda;
+  outline: 0;
+}
+
 form textarea {
   min-height: 250px;
   padding-top: 0.5rem;
+}
+
+form textarea:focus {
+  border: 2px solid #167eda;
+  outline: 0;
 }
 
 form input::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {

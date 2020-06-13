@@ -1,6 +1,5 @@
 .doctor-section {
   width: 100%;
-  padding-top: 7rem;
 }
 
 .doctor-section .single-doctor {
@@ -75,7 +74,6 @@
             align-items: center;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    padding-top: 4rem;
     margin-bottom: 1rem;
   }
   .doctor-section .single-doctor {

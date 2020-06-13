@@ -1,10 +1,11 @@
 {% include '/header/header.html.twig' %}
 
 <section class="slider">
-    
+
     <div class="mobile-text">
         <h2>Zadbaj z nami o swoje zeby!</h2>
-        <p>Nasi wykwalifikowani lekarze sprawią, że twoje zęby bedą czyste ale też przede wszystkim zdrowe. Wysokiej klasy sprzęt którym dysponujemy sprawi, że wszystko przebiegnie sprawnie i bezboleśnie.</p>
+        <p>Nasi wykwalifikowani lekarze sprawią, że twoje zęby bedą czyste ale też przede wszystkim zdrowe. Wysokiej
+            klasy sprzęt którym dysponujemy sprawi, że wszystko przebiegnie sprawnie i bezboleśnie.</p>
     </div>
 
     <img class="sliderimg">
@@ -18,19 +19,22 @@
     <div class="left-column">
         <div class="img-container">
             <div class="wrapper">
-            <img src="/assets/home/bub1.svg" alt="" id="bubble-1">
-            <img src="/assets/home/bub2.svg" alt="" id="bubble-2">
-             </div>
-             <div class="wrapper">
-            <img src="/assets/home/bub3.svg" alt="" id="bubble-3">
-            <img src="/assets/home/bub4.svg" alt="" id="bubble-4">
-        </div>
+                <img src="/assets/home/bub1.svg" alt="" id="bubble-1">
+                <img src="/assets/home/bub2.svg" alt="" id="bubble-2">
+            </div>
+            <div class="wrapper">
+                <img src="/assets/home/bub3.svg" alt="" id="bubble-3">
+                <img src="/assets/home/bub4.svg" alt="" id="bubble-4">
+            </div>
         </div>
     </div>
 
     <div class="right-column">
         <h2>Gabinet DentalCode</h2>
-        <p>Nasz gabinet zlokalizowany jest w centrum Poznania, niedaleko galerii Stary Browar. Jest on wyposażony w certyfikowany sprzęt dentystyczny którego profesjonalne wykonanie sprawia, że każde badanie lub zabieg przebiega przyjemnie i bezboleśnie a nasza przemiła obsługa dopilnuje abyś czuł/a się swobodnie. Przed gabinetem znajduje się bezpłatny parking dla klientów naszego gabinetu.</p>
+        <p>Nasz gabinet zlokalizowany jest w centrum Poznania, niedaleko galerii Stary Browar. Jest on wyposażony w
+            certyfikowany sprzęt dentystyczny którego profesjonalne wykonanie sprawia, że każde badanie lub zabieg
+            przebiega przyjemnie i bezboleśnie a nasza przemiła obsługa dopilnuje abyś czuł/a się swobodnie. Przed
+            gabinetem znajduje się bezpłatny parking dla klientów naszego gabinetu.</p>
     </div>
 
 </section>
@@ -59,56 +63,56 @@
 
     <div class="text-container">
         <h2>Jeżeli masz wątpliwości napisz do nas!</h2>
-        <p>Wypełnij formularz kontaktowy lub zadzwoń do nas a my odpowiemy na twoje pytania najszybciej jak to będzie możliwe.</p>
+        <p>Wypełnij formularz kontaktowy lub zadzwoń do nas a my odpowiemy na twoje pytania najszybciej jak to będzie
+            możliwe.</p>
     </div>
 
-   {% include '/form/questionForm.html.twig' %}
-   
+    {% include '/form/questionForm.html.twig' %}
+
 </section>
 
 {% block javascripts %}
 
 <script>
     var img = document.getElementsByClassName("sliderimg");
-    
+
     img[0].src = "assets/home/banner1.svg";
     img[1].src = "assets/home/banner2.svg";
     img[2].src = "assets/home/banner3.svg";
-    var i = 1;       
-    function myLoop () {           
-       setTimeout(function () {
-          if(i%3 == 1){
-            gsap.to(img[2], {duration: 0, opacity:"0"}).delay(2);
-            gsap.to(img[1], {duration: 0, opacity:"1"}).delay(2);
-            gsap.to(img[0], {duration: 2, x:"-100%"});
-            gsap.to(img[1], {duration: 2, x:"-100%"});
-            gsap.to(img[2], {duration: 0, x:"-100%"}); 
-          }
-          else if(i%3 == 2){
-            gsap.to(img[2], {duration: 0, opacity:"1"}).delay(2);
-            gsap.to(img[0], {duration: 0, opacity:"0"}).delay(2);
-            gsap.to(img[1], {duration: 2, x:"-200%"});
-            gsap.to(img[2], {duration: 2, x:"-200%"});
-            gsap.to(img[0], {duration: 2, x:"100%"});     
-          }
-          else if(i%3 == 0){
-            gsap.to(img[1], {duration: 0, opacity:"0"}).delay(2);
-            gsap.to(img[0], {duration: 0, opacity:"1"}).delay(2);
-            gsap.to(img[2], {duration: 2, x:"-300%"});
-            gsap.to(img[0], {duration: 2, x:"0%"});
-            gsap.to(img[1], {duration: 2, x:"0%"});      
-          }
-          i++;                             
-          if (i < 10) {            
-             myLoop();             
-          }                        
-        },10000)
+    var i = 1;
+    function myLoop() {
+        setTimeout(function () {
+            if (i % 3 == 1) {
+                gsap.to(img[2], { duration: 0, opacity: "0" }).delay(2);
+                gsap.to(img[1], { duration: 0, opacity: "1" }).delay(2);
+                gsap.to(img[0], { duration: 2, x: "-100%" });
+                gsap.to(img[1], { duration: 2, x: "-100%" });
+                gsap.to(img[2], { duration: 0, x: "-100%" });
+            }
+            else if (i % 3 == 2) {
+                gsap.to(img[2], { duration: 0, opacity: "1" }).delay(2);
+                gsap.to(img[0], { duration: 0, opacity: "0" }).delay(2);
+                gsap.to(img[1], { duration: 2, x: "-200%" });
+                gsap.to(img[2], { duration: 2, x: "-200%" });
+                gsap.to(img[0], { duration: 2, x: "100%" });
+            }
+            else if (i % 3 == 0) {
+                gsap.to(img[1], { duration: 0, opacity: "0" }).delay(2);
+                gsap.to(img[0], { duration: 0, opacity: "1" }).delay(2);
+                gsap.to(img[2], { duration: 2, x: "-300%" });
+                gsap.to(img[0], { duration: 2, x: "0%" });
+                gsap.to(img[1], { duration: 2, x: "0%" });
+            }
+            i++;
+            if (i < 31) {
+                myLoop();
+            }
+        }, 10000)
     }
     myLoop();
-    
-    </script>
 
-    {% endblock %}
+</script>
+
+{% endblock %}
 
 {% include '/footer/footer.html.twig' %}
-
