@@ -12,194 +12,196 @@
 
     <div class="right-column">
         <div class="questions-box">
-         {% for question in questions %}
-             <div class="single-question">
+            {% for question in questions %}
+            <div class="single-question">
                 <div class="left-wrapper">
-                <p>Imię: {{ question.name }}</p>
-                <p>Nazwisko: {{ question.surname }}</p>
-                <p>E-mail: {{ question.email }}</p>
-                <p>Tresc: {{ question.body }}</p>
+                    <p>Imię: {{ question.name }}</p>
+                    <p>Nazwisko: {{ question.surname }}</p>
+                    <p>E-mail: {{ question.email }}</p>
+                    <p>Tresc: {{ question.body }}</p>
+                </div>
+                <div class="right-wrapper">
+                    <textarea></textarea>
+                    <input type="submit">
+                </div>
             </div>
-             <div class="right-wrapper">
-                <textarea></textarea>
-                <input type="submit">
-            </div>
-            </div>
-        {% else %}
+            {% else %}
             <tr>
                 <td colspan="4">Brak pytan w bazie</td>
             </tr>
-        {% endfor %}
-            
+            {% endfor %}
+
         </div>
 
         <div class="calendar">
             <div class="wrapper">
-            <input class="prev" type="image" src="assets/admin-panel/arrow.png" alt="arrow"></input>
-            <div class="table-container">
-                <h2 class="current-month"></h2>
-            <table class="this-month">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-            <input class="rotate next" type="image" src="assets/admin-panel/arrow.png" alt="arrow"></input>
-        </div>
-        <div class="hidden-box">
-            <div class="hidden-window">
-                <div class="wrapper">
-                <h2 class="day"></h2>
-                <input class="close-hidden-window" type="image" src="assets/home/close.png">
+                <input class="prev" type="image" src="assets/admin-panel/arrow.png" alt="arrow">
+                <div class="table-container">
+                    <h2 class="current-month"></h2>
+                    <table class="this-month">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <input class="rotate next" type="image" src="assets/admin-panel/arrow.png" alt="arrow">
             </div>
-            <p>WIZYTY Z BAZY</p>
+            <div class="hidden-box">
+                <div class="hidden-window">
+                    <div class="wrapper">
+                        <h2 class="day"></h2>
+                        <input class="close-hidden-window" type="image" src="assets/home/close.png" alt="cross">
+                    </div>
+                    <p>WIZYTY Z BAZY</p>
+                </div>
+
             </div>
-            
-        </div>
         </div>
 
         <div class="workers">
             <div class="workers-wrapper">
-            <div class="single-worker">
-                <div class="img-container">
-                    <img src="assets/admin-panel/doctor.png" alt="doctor">
+                <div class="single-worker">
+                    <div class="img-container">
+                        <img src="assets/admin-panel/doctor.png" alt="doctor">
+                    </div>
+                    <div class="text-wrapper">
+                        <p>Imię:BAZA</p>
+                        <p>Nazwisko:BAZA</p>
+                        <p>Specjalizacja:BAZA</p>
+                    </div>
+                    <div class="buttons-wrapper">
+                        <button class="edit">EDYTUJ</button>
+                        <button class="delete">USUŃ</button>
+                    </div>
                 </div>
-                <div class="text-wrapper">
-                <p>Imię:BAZA</p>
-                <p>Nazwisko:BAZA</p>
-                <p>Specjalizacja:BAZA</p>
+                <div class="single-worker">
+                    <div class="img-container">
+                        <img src="assets/admin-panel/doctor.png" alt="doctor">
+                    </div>
+                    <div class="text-wrapper">
+                        <p>Imię:BAZA</p>
+                        <p>Nazwisko:BAZA</p>
+                        <p>Specjalizacja:BAZA</p>
+                    </div>
+                    <div class="buttons-wrapper">
+                        <button class="edit">EDYTUJ</button>
+                        <button class="delete">USUŃ</button>
+                    </div>
                 </div>
-                <div class="buttons-wrapper">
-                <button class="edit">EDYTUJ</button>
-                <button class="delete">USUŃ</button>
+                <div class="single-worker">
+                    <div class="img-container">
+                        <img src="assets/admin-panel/doctor.png" alt="doctor">
+                    </div>
+                    <div class="text-wrapper">
+                        <p>Imię:BAZA</p>
+                        <p>Nazwisko:BAZA</p>
+                        <p>Specjalizacja:BAZA</p>
+                    </div>
+                    <div class="buttons-wrapper">
+                        <button class="edit">EDYTUJ</button>
+                        <button class="delete">USUŃ</button>
+                    </div>
+
                 </div>
             </div>
-            <div class="single-worker">
-                <div class="img-container">
-                    <img src="assets/admin-panel/doctor.png" alt="doctor">
-                </div>
-                <div class="text-wrapper">
-                <p>Imię:BAZA</p>
-                <p>Nazwisko:BAZA</p>
-                <p>Specjalizacja:BAZA</p>
-                </div>
-                <div class="buttons-wrapper">
-                    <button class="edit">EDYTUJ</button>
-                    <button class="delete">USUŃ</button>
-                    </div>
+            <div class="buttons-wrapper-outer">
+                <button class="add">DODAJ</button>
             </div>
-            <div class="single-worker">
-                <div class="img-container">
-                    <img src="assets/admin-panel/doctor.png" alt="doctor">
-                    </div>
-                <div class="text-wrapper">
-                <p>Imię:BAZA</p>
-                <p>Nazwisko:BAZA</p>
-                <p>Specjalizacja:BAZA</p>
-                </div>
-                <div class="buttons-wrapper">
-                    <button class="edit">EDYTUJ</button>
-                    <button class="delete">USUŃ</button>
-                    </div>
-            
         </div>
     </div>
-    <div class="buttons-wrapper-outer">
-        <button class="add">DODAJ</button>
-        </div>
-</div>
-            
-    
+
+
+
 </section>
 
 {% block javascripts %}
 
 <script>
 
-var li = document.getElementsByClassName("sidebar-li");
-var qbox = document.getElementsByClassName("questions-box")[0];
-var calendar = document.getElementsByClassName("calendar")[0];
-var workers = document.getElementsByClassName("workers")[0];
+    var li = document.getElementsByClassName("sidebar-li");
+    var qbox = document.getElementsByClassName("questions-box")[0];
+    var calendar = document.getElementsByClassName("calendar")[0];
+    var workers = document.getElementsByClassName("workers")[0];
 
-li[0].onclick = function(){
-    li[0].className = "active sidebar-li";
-    li[1].className = "sidebar-li";
-    li[2].className = "sidebar-li";
+    li[0].onclick = function () {
+        li[0].className = "active sidebar-li";
+        li[1].className = "sidebar-li";
+        li[2].className = "sidebar-li";
 
-    qbox.style.display="block";
-    calendar.style.display="none";
-    workers.style.display="none";
+        qbox.style.display = "block";
+        calendar.style.display = "none";
+        workers.style.display = "none";
 
-}
-li[1].onclick = function(){
-    li[0].className = "sidebar-li";
-    li[1].className = "active sidebar-li";
-    li[2].className = "sidebar-li";
+    }
+    li[1].onclick = function () {
+        li[0].className = "sidebar-li";
+        li[1].className = "active sidebar-li";
+        li[2].className = "sidebar-li";
 
-    qbox.style.display="none";
-    calendar.style.display="flex";
-    workers.style.display="none";
-}
-li[2].onclick = function(){
-    li[0].className = "sidebar-li";
-    li[1].className = "sidebar-li";
-    li[2].className = "active sidebar-li";
+        qbox.style.display = "none";
+        calendar.style.display = "flex";
+        workers.style.display = "none";
+    }
+    li[2].onclick = function () {
+        li[0].className = "sidebar-li";
+        li[1].className = "sidebar-li";
+        li[2].className = "active sidebar-li";
 
-    qbox.style.display="none";
-    calendar.style.display="none";
-    workers.style.display="flex";
-}
+        qbox.style.display = "none";
+        calendar.style.display = "none";
+        workers.style.display = "flex";
+    }
 
 </script>
 
@@ -232,221 +234,221 @@ li[2].onclick = function(){
     var hiddenwindow = document.getElementsByClassName("hidden-window")[0];
 
     for (var i = 0; i < td.length; i++) {
-     td[i].onclick = selectValue;
+        td[i].onclick = selectValue;
     }
 
     function selectValue() {
-    value = this.className;
-    if(value != "blocked"){
-    hiddenbox.style.display = "flex";
-    hiddenwindow.style.display = "block";
-    hiddenwindow.getElementsByTagName("h2")[0].innerText = value;
-    }
+        value = this.className;
+        if (value != "blocked") {
+            hiddenbox.style.display = "flex";
+            hiddenwindow.style.display = "block";
+            hiddenwindow.getElementsByTagName("h2")[0].innerText = value;
+        }
     }
 
     var close_hidden = document.getElementsByClassName("close-hidden-window")[0];
 
-    close_hidden.onclick = function(){
+    close_hidden.onclick = function () {
         hiddenbox.style.display = "none";
         hiddenwindow.style.display = "none";
     }
 
 
 
-    next.onclick = function(){
+    next.onclick = function () {
         number++;
-        if(number==0){
+        if (number == 0) {
             n = month[d.getMonth()];
         }
-        else{
-            n = month[d.getMonth()+number];
+        else {
+            n = month[d.getMonth() + number];
         }
         current_month.innerText = n;
         prev.style.visibility = "visible";
-        checknumber();     
+        checknumber();
     }
-    prev.onclick = function(){
+    prev.onclick = function () {
         number--;
-        if(number==0){
+        if (number == 0) {
             n = month[d.getMonth()];
         }
-        else{
-            n = month[d.getMonth()+number];
+        else {
+            n = month[d.getMonth() + number];
         }
         current_month.innerText = n;
         next.style.visibility = "visible";
-        checknumber();     
+        checknumber();
     }
     checknumber();
 
-function checknumber(){
-    if(number==-1){
-    prev.style.visibility = "hidden";
-    next.style.visibility = "visible";
-    for(var i =0;i<2;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+    function checknumber() {
+        if (number == -1) {
+            prev.style.visibility = "hidden";
+            next.style.visibility = "visible";
+            for (var i = 0; i < 2; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 2; i < 32; i++) {
+                td[i].className = n + " " + (i - 1);
+                td[i].innerText = i - 1;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 32; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 0) {
+            prev.style.visibility = "visible";
+            next.style.visibility = "visible";
+            for (var i = 0; i < 4; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 4; i < 35; i++) {
+                td[i].className = n + " " + (i - 3);
+                td[i].innerText = i - 3;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 35; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 1) {
+            for (var i = 0; i < 30; i++) {
+                td[i].className = n + " " + (i + 1);
+                td[i].innerText = i + 1;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 30; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 2) {
+            for (var i = 0; i <= 1; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 2; i < 33; i++) {
+                td[i].className = n + " " + (i - 1);
+                td[i].innerText = i - 1;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 33; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 3) {
+            for (var i = 0; i <= 4; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 5; i < 36; i++) {
+                td[i].className = n + " " + (i - 4);
+                td[i].innerText = i - 4;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 36; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 4) {
+            for (var i = 0; i < 1; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 1; i < 31; i++) {
+                td[i].className = n + " " + (i);
+                td[i].innerText = i;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 31; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 5) {
+            for (var i = 0; i < 3; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 3; i < 34; i++) {
+                td[i].className = n + " " + (i - 2);
+                td[i].innerText = i - 2;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 34; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 6) {
+            for (var i = 0; i < 6; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 6; i < 36; i++) {
+                td[i].className = n + " " + (i - 5);
+                td[i].innerText = i - 5;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 36; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 7) {
+            next.style.visibility = "hidden";
+            for (var i = 0; i < 1; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 1; i < 32; i++) {
+                td[i].className = n + " " + (i);
+                td[i].innerText = i;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 32; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
     }
-    for(var i = 2;i<32;i++){
-        td[i].className = n+" "+(i-1);
-        td[i].innerText = i-1;
-        td[i].style.backgroundColor = "#fff";
-    }
-    for(var i = 32;i<=42;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    }
-    else if(number==0){
-    prev.style.visibility = "visible";
-    next.style.visibility = "visible";
-    for(var i =0;i<4;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    for(var i = 4;i<35;i++){
-        td[i].className = n+" "+(i-3);
-        td[i].innerText = i-3;
-        td[i].style.backgroundColor = "#fff";
-    }
-    for(var i = 35;i<=42;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    }
-    else if(number==1){
-    for(var i =0;i<30;i++){
-        td[i].className = n+" "+(i+1);
-        td[i].innerText = i+1;
-        td[i].style.backgroundColor = "#fff";
-    }
-    for(var i = 30;i<=42;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    }
-    else if(number==2){
-    for(var i = 0;i<=1;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    for(var i =2;i<33;i++){
-        td[i].className = n+" "+(i-1);
-        td[i].innerText = i-1;
-        td[i].style.backgroundColor = "#fff";
-    }
-    for(var i = 33;i<=42;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    }
-    else if(number==3){
-    for(var i = 0;i<=4;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    for(var i =5;i<36;i++){
-        td[i].className = n+" "+(i-4);
-        td[i].innerText = i-4;
-        td[i].style.backgroundColor = "#fff";
-    }
-    for(var i = 36;i<=42;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    }
-    else if(number==4){
-    for(var i = 0;i<1;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    for(var i =1;i<31;i++){
-        td[i].className = n+" "+(i);
-        td[i].innerText = i;
-        td[i].style.backgroundColor = "#fff";
-    }
-    for(var i = 31;i<=42;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    }
-    else if(number==5){
-    for(var i = 0;i<3;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    for(var i =3;i<34;i++){
-        td[i].className = n+" "+(i-2);
-        td[i].innerText = i-2;
-        td[i].style.backgroundColor = "#fff";
-    }
-    for(var i = 34;i<=42;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    }
-    else if(number==6){
-    for(var i = 0;i<6;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    for(var i =6;i<36;i++){
-        td[i].className = n+" "+(i-5);
-        td[i].innerText = i-5;
-        td[i].style.backgroundColor = "#fff";
-    }
-    for(var i = 36;i<=42;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    }
-    else if(number==7){
-    next.style.visibility = "hidden";
-    for(var i = 0;i<1;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    for(var i =1;i<32;i++){
-        td[i].className = n+" "+(i);
-        td[i].innerText = i;
-        td[i].style.backgroundColor = "#fff";
-    }
-    for(var i = 32;i<=42;i++){
-        td[i].className = "blocked";
-        td[i].innerText = " ";
-        td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
-    }
-    }
-}
 
 </script>
 
 <script>
 
-var header = document.getElementsByTagName("header")[0];
-header.style.position = "unset";
+    var header = document.getElementsByTagName("header")[0];
+    header.style.position = "unset";
 
-var menu = document.getElementsByClassName("menu")[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
-menu[0].id = "logout";
-menu[0].innerHTML = "<a href='/home'>Wyloguj się</a>";
-menu[1].style.display = "none";
-menu[2].style.display = "none";
+    var menu = document.getElementsByClassName("menu")[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
+    menu[0].id = "logout";
+    menu[0].innerHTML = "<a href='/home'>Wyloguj się</a>";
+    menu[1].style.display = "none";
+    menu[2].style.display = "none";
 
 
 </script>

@@ -281,7 +281,7 @@ body {
   line-height: 100px;
 }
 
-.home-section-2 ul .wrapper li {
+.home-section-2 ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -293,12 +293,12 @@ body {
           justify-content: center;
 }
 
-.home-section-2 ul .wrapper li:before {
+.home-section-2 ul li:before {
   display: none;
 }
 
 @media (min-width: 1000px) {
-  .home-section-2 ul {
+  .home-section-2 .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -306,22 +306,23 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .home-section-2 ul .wrapper {
+  .home-section-2 .wrapper ul {
     margin: 0 10vw;
     line-height: 150px;
   }
-  .home-section-2 ul .wrapper li {
+  .home-section-2 .wrapper ul li {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
-  .home-section-2 ul .wrapper li:before {
-    display: block;
+  .home-section-2 .wrapper ul li:before {
+    display: inline-block;
     content: url(../../assets/home/tooth.svg);
     margin-left: -40px;
     margin-right: 40px;
+    height: 100px;
   }
-  .home-section-2 ul .wrapper li:hover::before {
+  .home-section-2 .wrapper ul li:hover::before {
     -webkit-animation: shake 1s;
             animation: shake 1s;
   }

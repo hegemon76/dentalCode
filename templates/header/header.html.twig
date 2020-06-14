@@ -1,79 +1,86 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="pl-PL">
+
 <head>
-<title>Dentalcode</title>
+    <title>Dentalcode</title>
     <meta name="google-site-verification" content="x_an-RZqueWdx1M-QJAQB1VZBtM1T-4eO8q8G1ZZpfw" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% block stylesheets %}
-    <link href="{{ asset('styles/main.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('styles/keyframes.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('styles/header/header.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('styles/footer/footer.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('styles/home/home.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('styles/kontakt/kontakt.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('styles/admin-panel/admin-panel.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('styles/form/form.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('styles/wizyty/wizyty.css') }}" rel="stylesheet"/>
-    <link rel="icon" href="../../assets/header/fav.png" type="image/icon type">
-{% endblock %}
+    <meta charset="UTF-8">
+    {% block stylesheets %}
+    <link href="{{ asset('styles/main.css') }}" rel="stylesheet" />
+    <link href="{{ asset('styles/keyframes.css') }}" rel="stylesheet" />
+    <link href="{{ asset('styles/header/header.css') }}" rel="stylesheet" />
+    <link href="{{ asset('styles/footer/footer.css') }}" rel="stylesheet" />
+    <link href="{{ asset('styles/home/home.css') }}" rel="stylesheet" />
+    <link href="{{ asset('styles/kontakt/kontakt.css') }}" rel="stylesheet" />
+    <link href="{{ asset('styles/admin-panel/admin-panel.css') }}" rel="stylesheet" />
+    <link href="{{ asset('styles/form/form.css') }}" rel="stylesheet" />
+    <link href="{{ asset('styles/wizyty/wizyty.css') }}" rel="stylesheet" />
+    <link rel="icon" href="../../assets/header/fav.png">
+    {% endblock %}
 
-{% block javascript %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-{% endblock %}
+    {% block javascript %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    {% endblock %}
 
 </head>
+
 <body>
-<header>
+    <header>
 
-<div class="wrapper">
+        <div class="wrapper">
 
-    <div class="logo-container">
-        <a href="/home"><img src="assets/header/logo2.svg" alt="dentalcode-logo"></a>
-    </div>
-
-    <div class="menu">
-        <ul>
-            <li class="active" id="logoutnbtn">Wyloguj się</li>
-            <li class="active" id="loginbtn">Zaloguj się</li>
-            <a href="/wizyty"><li>Umów wizytę</li></a>
-            <a href="/kontakt"><li>Kontakt</li></a>
-        </ul>
-        <input class="hamburger" type="image" src="assets/header/hamburger.png">
-    </div>
-
-</div>
-
-    <div class="hidden-menu">
-        <ul>
-            <li class="active" id="loginbtn2">Zaloguj się</li>
-            <a href="/wizyty"><li>Umów wizytę</li></a>
-            <a href="/kontakt"><li>Kontakt</li></a>
-        </ul>
-    </div>
-
-    <div class="login-container">
-
-        <div class="login-box">
-            <div class="close-row">
-                <input class="close" type="image" src="assets/home/close.png" onclick="closeLoginContainer()">
+            <div class="logo-container">
+                <a href="/home"><img src="assets/header/logo2.svg" alt="dentalcode-logo"></a>
             </div>
-            <h4>Zaloguj się</h4>
-            <form id="loginForm" action="#"> 
-                <input type="text" name="login" placeholder="Login">
-                <input type="text" name="password" placeholder="Hasło">
-                <div class="submit-row">
-                    <input type="submit" value="Zaloguj się"></input>
+
+            <div class="menu">
+                <ul>
+                    <li class="active" id="logoutnbtn">Wyloguj się</li>
+                    <li class="active" id="loginbtn">Zaloguj się</li>
+                    <li><a href="/wizyty">Umów wizytę</a></li>
+                    <li><a href="/kontakt">Kontakt</a></li>
+                </ul>
+                <input class="hamburger" type="image" src="assets/header/hamburger.png" alt="haburger">
+            </div>
+
+        </div>
+
+        <div class="hidden-menu">
+            <ul>
+                <li class="active" id="loginbtn2">Zaloguj się</li>
+                <li><a href="/wizyty">Umów wizytę</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+
+        <div class="login-container">
+
+            <div class="login-box">
+                <div class="close-row">
+                    <input class="close" type="image" src="assets/home/close.png" onclick="closeLoginContainer()"
+                        alt="cross">
                 </div>
-                <a id="register" class="register" onclick="register()">Zarejestruj się</a>
-            </form>
-        </div>
-
-        <div class="register-box">
-            <div class="close-row">
-                <input class="close" type="image" src="assets/home/close.png" onclick="closeLoginContainer()">
+                <h4>Zaloguj się</h4>
+                <form id="loginForm" action="#">
+                    <input type="text" name="login" placeholder="Login">
+                    <input type="text" name="password" placeholder="Hasło">
+                    <div class="submit-row">
+                        <input type="submit" value="Zaloguj się">
+                    </div>
+                    <a id="register" class="register" onclick="register()">Zarejestruj się</a>
+                </form>
             </div>
-            {% include '/registration/register.html.twig' %}
-        </div>
-    
-    </div>
 
-</header>
+            <div class="register-box">
+                <div class="close-row">
+                    <input class="close" type="image" src="assets/home/close.png" onclick="closeLoginContainer()"
+                        alt="cross">
+                </div>
+                {% include '/registration/register.html.twig' %}
+            </div>
+
+        </div>
+
+    </header>
