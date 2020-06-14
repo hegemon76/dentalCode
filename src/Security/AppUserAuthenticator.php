@@ -24,7 +24,7 @@ class AppUserAuthenticator extends AbstractFormLoginAuthenticator implements Pas
 {
     use TargetPathTrait;
 
-    public const LOGIN_ROUTE = 'app_login';
+    public const LOGIN_ROUTE = 'strona_domowa';
 
     private $entityManager;
     private $urlGenerator;
