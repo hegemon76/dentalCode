@@ -8,9 +8,9 @@
             klasy sprzęt którym dysponujemy sprawi, że wszystko przebiegnie sprawnie i bezboleśnie.</p>
     </div>
 
-    <img class="sliderimg">
-    <img class="sliderimg">
-    <img class="sliderimg">
+    <img class="sliderimg" src="assets/home/banner1.svg" alt="girl">
+    <img class="sliderimg" src="assets/home/banner2.svg" alt="people">
+    <img class="sliderimg" src="assets/home/banner3.svg" alt="girl">
 
 </section>
 
@@ -41,22 +41,21 @@
 
 <section class="home-section-2">
     <h2>Usługi</h2>
-    <ul>
-        <div class="wrapper">
+    <div class="wrapper">
+        <ul>
             <li>Konsultacja i diagnostyka</li>
             <li>Znieczulenia</li>
             <li>Wizyta awaryjna</li>
             <li>Protetyka</li>
-        </div>
+        </ul>
 
-        <div class="wrapper">
+        <ul>
             <li>Zabiegi profilaktyczne</li>
             <li>Stomatologia zapobiegawcza</li>
             <li>Leczenie kanałowe</li>
             <li>Stomatologia estetyczna</li>
-        </div>
-
-    </ul>
+        </ul>
+    </div>
 </section>
 
 <section class="home-section-3">
@@ -76,9 +75,9 @@
 <script>
     var img = document.getElementsByClassName("sliderimg");
 
-    img[0].src = "assets/home/banner1.svg";
-    img[1].src = "assets/home/banner2.svg";
-    img[2].src = "assets/home/banner3.svg";
+    //img[0].src = "assets/home/banner1.svg";
+    //img[1].src = "assets/home/banner2.svg";
+    //img[2].src = "assets/home/banner3.svg";
     var i = 1;
     function myLoop() {
         setTimeout(function () {

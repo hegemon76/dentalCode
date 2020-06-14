@@ -226,7 +226,6 @@ body{
         list-style-type: none;
         text-align: center;
         line-height: 100px;
-        .wrapper{
             li{
                 display: flex;
                 align-items: center;
@@ -235,23 +234,24 @@ body{
                     display: none;
                 }
             }
-        }
     }
 
     @media(min-width:1000px){
-        ul{
+        .wrapper{
             display: flex;
             justify-content: center;
-            .wrapper{
+        ul{
                 margin: 0 10vw;
                 line-height: 150px;
                 li{
                     justify-content: flex-start;
+
                     &:before{
-                        display: block;
+                        display:inline-block;
                         content:url(../../assets/home/tooth.svg);
                         margin-left: -40px;
                         margin-right: 40px;
+                        height: 100px;
                     }
                     &:hover::before{
                         animation: shake 1s;

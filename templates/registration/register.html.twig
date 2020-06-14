@@ -1,15 +1,11 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Register{% endblock %}
-
 {% block body %}
 
-    {{ form_start(registrationForm) }}
-    <h4>Zarejestruj się</h4>
-        {{ form_widget(registrationForm)}}
-        <div class="submit-row">
-            <input type="submit" value="Zarejestruj się">
-            </div>
-            <a id="login" class="login" onclick="login()">Zaloguj się</a>
-    {{ form_end(registrationForm) }}
+{{ form_start(registrationForm) }}
+<h4>Zarejestruj się</h4>
+{{ form_widget(registrationForm)}}
+<div class="submit-row">
+    <input type="submit" value="Zarejestruj się">
+</div>
+<a id="login" class="login" onclick="login()">Zaloguj się</a>
+{{ form_end(registrationForm) }}
 {% endblock %}
