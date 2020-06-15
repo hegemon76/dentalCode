@@ -12,6 +12,7 @@ use App\Controller\RegistrationController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use App\Controller\QuestionController;
 use App\Form\RegistrationFormType;
+use App\Repository\DoctorRepository;
 
 class WizytyController extends AbstractController
 {
@@ -19,7 +20,7 @@ class WizytyController extends AbstractController
     /**
      * @Route("/wizyty", name="strona_wizyty")
      */
-    public function wizyty(EntityManagerInterface $em, Request $request, QuestionController $qc)
+    public function wizyty(EntityManagerInterface $em, Request $request, QuestionController $qc, DoctorRepository $doctors)
     {
        
         $questionForm = $this->createForm(QuestionType::class);
@@ -33,10 +34,11 @@ class WizytyController extends AbstractController
         }
 
         
-        return $this->render('wizyty/wizyty.html.twig', [
+        return $this->render('wizyty/wizyty2.html.twig', [
             'controller_name' => 'WizytyController',
             'questionForm' => $questionForm->createView(),
             'registrationForm' => $register->createView(),
+            'doctors' => $doctors->findAll()
 
         ]);
     }

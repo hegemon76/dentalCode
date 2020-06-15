@@ -1,0 +1,328 @@
+{% include '/header/header.html.twig' %}
+
+<section class="doctor-section">
+{% for doctor in doctors %}
+    <div class="single-doctor">
+        <div class="img-container">
+            <img src="../../assets/wizyty/doctor.png" alt="doctor">
+        </div>
+        <div class="dane">
+            <p>{{ doctor.name }} </p>
+            <p>{{ doctor.surname }}</p>
+            <p>Specjalizacja: {{ doctor.specialization }}</p>
+            <button onclick="scrollToCalendar()">Wybierz</button>
+        </div>
+    </div>
+{% endfor %}
+</section>
+
+<section id="calendar-section" class="calendar-section">
+    <div class="calendar">
+        <div class="wrapper">
+            <input class="prev" type="image" src="assets/admin-panel/arrow.png" alt="arrow">
+            <div class="table-container">
+                <h2 class="current-month"></h2>
+                <table class="this-month">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <input class="rotate next" type="image" src="assets/admin-panel/arrow.png" alt="arrow">
+        </div>
+    </div>
+</section>
+
+<section id="hours-section" class="hours-section">
+    <table class="hours-table">
+        <tr>
+            <td>9:00</td>
+            <td>10:00</td>
+            <td>11:00</td>
+            <td>12:00</td>
+        </tr>
+        <tr>
+            <td>13:00</td>
+            <td>14:00</td>
+            <td>15:00</td>
+            <td>16:00</td>
+        </tr>
+    </table>
+</section>
+
+<script>
+    $calendar = document.getElementById("calendar-section");
+    $hours = document.getElementById("hours-section");
+
+    function scrollToCalendar() {
+        $calendar.style.display = "flex";
+        $calendar.scrollIntoView({ block: "start" });
+    }
+
+</script>
+
+<script>
+    var current_month = document.getElementsByClassName("current-month")[0];
+    var d = new Date();
+    var month = new Array();
+    month[0] = "Styczeń";
+    month[1] = "Luty";
+    month[2] = "Marzec";
+    month[3] = "Kwiecień";
+    month[4] = "Maj";
+    month[5] = "Czerwiec";
+    month[6] = "Lipiec";
+    month[7] = "Sierpień";
+    month[8] = "Wrzesień";
+    month[9] = "Październik";
+    month[10] = "Listopad";
+    month[11] = "Grudzień";
+    var n = month[d.getMonth()];
+    current_month.innerText = n;
+
+    var prev = document.getElementsByClassName("prev")[0];
+    var next = document.getElementsByClassName("next")[0];
+    var number = 0;
+
+    var thismonth = document.getElementsByClassName("this-month")[0];
+    var td = thismonth.getElementsByTagName("td");
+    var hiddenbox = document.getElementsByClassName("hidden-box")[0];
+    var hiddenwindow = document.getElementsByClassName("hidden-window")[0];
+
+    for (var i = 0; i < td.length; i++) {
+        td[i].onclick = selectValue;
+    }
+
+    function selectValue() {
+        value = this.className;
+        $hours.style.display = "flex";
+        $hours.scrollIntoView({ block: "start" });
+    }
+
+
+    next.onclick = function () {
+        number++;
+        if (number == 0) {
+            n = month[d.getMonth()];
+        }
+        else {
+            n = month[d.getMonth() + number];
+        }
+        current_month.innerText = n;
+        prev.style.visibility = "visible";
+        checknumber();
+    }
+    prev.onclick = function () {
+        number--;
+        if (number == 0) {
+            n = month[d.getMonth()];
+        }
+        else {
+            n = month[d.getMonth() + number];
+        }
+        current_month.innerText = n;
+        next.style.visibility = "visible";
+        checknumber();
+    }
+    checknumber();
+
+    function checknumber() {
+        if (number == -1) {
+            prev.style.visibility = "hidden";
+            next.style.visibility = "visible";
+            for (var i = 0; i < 4; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 4; i < 35; i++) {
+                td[i].className = n + " " + (i - 3);
+                td[i].innerText = i - 3;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 35; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+
+        }
+
+        else if (number == 0) {
+            prev.style.visibility = "visible";
+            next.style.visibility = "visible";
+            for (var i = 0; i < 30; i++) {
+                td[i].className = n + " " + (i + 1);
+                td[i].innerText = i + 1;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 30; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 1) {
+            for (var i = 0; i <= 1; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 2; i < 33; i++) {
+                td[i].className = n + " " + (i - 1);
+                td[i].innerText = i - 1;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 33; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 2) {
+            for (var i = 0; i <= 4; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 5; i < 36; i++) {
+                td[i].className = n + " " + (i - 4);
+                td[i].innerText = i - 4;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 36; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 3) {
+            for (var i = 0; i < 1; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 1; i < 31; i++) {
+                td[i].className = n + " " + (i);
+                td[i].innerText = i;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 31; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 4) {
+            for (var i = 0; i < 3; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 3; i < 34; i++) {
+                td[i].className = n + " " + (i - 2);
+                td[i].innerText = i - 2;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 34; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 5) {
+            for (var i = 0; i < 6; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 6; i < 36; i++) {
+                td[i].className = n + " " + (i - 5);
+                td[i].innerText = i - 5;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 36; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+        else if (number == 6) {
+            next.style.visibility = "hidden";
+            for (var i = 0; i < 1; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+            for (var i = 1; i < 32; i++) {
+                td[i].className = n + " " + (i);
+                td[i].innerText = i;
+                td[i].style.backgroundColor = "#fff";
+            }
+            for (var i = 32; i <= 42; i++) {
+                td[i].className = "blocked";
+                td[i].innerText = " ";
+                td[i].style.backgroundColor = "rgba(229,61,61,0.5)";
+            }
+        }
+    }
+
+</script>
+
+<script>
+    let header = document.getElementsByTagName("header")[0];
+    header.style.position = "unset";
+</script>
+
+{% include '/footer/footer.html.twig' %}
