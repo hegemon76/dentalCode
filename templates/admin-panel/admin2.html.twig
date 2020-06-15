@@ -111,49 +111,25 @@
 
         <div class="workers">
             <div class="workers-wrapper">
+            {% for doctor in doctors %}
                 <div class="single-worker">
                     <div class="img-container">
                         <img src="assets/admin-panel/doctor.png" alt="doctor">
                     </div>
                     <div class="text-wrapper">
-                        <p>Imię:BAZA</p>
-                        <p>Nazwisko:BAZA</p>
-                        <p>Specjalizacja:BAZA</p>
+                        <p>Imie: {{ doctor.name }}</p>
+                        <p>Nazwisko: {{ doctor.surname }}</p>
+                        <p>Specjalizacja: {{ doctor.specialization }}</p>
                     </div>
                     <div class="buttons-wrapper">
                         <button class="edit">EDYTUJ</button>
                         <button class="delete">USUŃ</button>
                     </div>
                 </div>
-                <div class="single-worker">
-                    <div class="img-container">
-                        <img src="assets/admin-panel/doctor.png" alt="doctor">
-                    </div>
-                    <div class="text-wrapper">
-                        <p>Imię:BAZA</p>
-                        <p>Nazwisko:BAZA</p>
-                        <p>Specjalizacja:BAZA</p>
-                    </div>
-                    <div class="buttons-wrapper">
-                        <button class="edit">EDYTUJ</button>
-                        <button class="delete">USUŃ</button>
-                    </div>
-                </div>
-                <div class="single-worker">
-                    <div class="img-container">
-                        <img src="assets/admin-panel/doctor.png" alt="doctor">
-                    </div>
-                    <div class="text-wrapper">
-                        <p>Imię:BAZA</p>
-                        <p>Nazwisko:BAZA</p>
-                        <p>Specjalizacja:BAZA</p>
-                    </div>
-                    <div class="buttons-wrapper">
-                        <button class="edit">EDYTUJ</button>
-                        <button class="delete">USUŃ</button>
-                    </div>
-
-                </div>
+                {% else %}
+                <p> Brak lekarzy </p>
+                {% endfor %}
+                
             </div>
             <div class="buttons-wrapper-outer">
                 <button class="add">DODAJ</button>

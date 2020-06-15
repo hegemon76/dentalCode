@@ -27,9 +27,9 @@ class StronaDomowaController extends AbstractController
         $questionForm = $this->createForm(QuestionType::class);
         $register = $this->createForm(RegistrationFormType::class);
         $loginForm = $this->createForm(LoginType::class);
-        $error = $authenticationUtils->getLastAuthenticationError();
+        //$error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
+       // $lastUsername = $authenticationUtils->getLastUsername();
 
         $loginForm->handleRequest($request);
         $questionForm->handleRequest($request);
@@ -52,8 +52,8 @@ class StronaDomowaController extends AbstractController
             'questionForm' => $questionForm->createView(),
             'registrationForm' => $register->createView(),
             'loginForm' => $loginForm->createView(),
-            'last_username' => $lastUsername,
-            'error' => $error,
+            //'last_username' => $lastUsername
+           // 'error' => $error,
 
         ]);
     }

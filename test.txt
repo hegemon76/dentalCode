@@ -77,3 +77,9 @@ $name = $request->request->get('_imie');
                     <input type="text" name="password" placeholder="Hasło">
                     <div class="submit-row">
                         <input type="submit" value="Zaloguj się">
+
+                         {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>

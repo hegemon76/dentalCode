@@ -11,13 +11,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\DoctorType;
 use App\Form\RegistrationFormType;
+use App\Repository\DoctorRepository;
 
 class AdminPanelController extends AbstractController
 {
     /**
      * @Route("/admin-panel", name="Panel Administracyjny")
      */
-    public function panel(QuestionRepository $questionsRepository)
+    public function panel(QuestionRepository $questionsRepository, DoctorRepository $doctors)
     {
         $register = $this->createForm(RegistrationFormType::class);
 
@@ -25,11 +26,12 @@ class AdminPanelController extends AbstractController
             'controller_name' => 'AdminPanelController',
             'questions' => $questionsRepository->findAll(),
             'registrationForm' => $register->createView(),
+            'doctors' => $doctors->findAll()
         ]);
     }
 
     /**
-     * @Route("/admin_add_doctor", name="dodaj_doktora")
+     * @Route("/add_doctor", name="dodaj_doktora")
      */
     public function new(EntityManagerInterface $em, Request $request)
     {
