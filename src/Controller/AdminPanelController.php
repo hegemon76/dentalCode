@@ -16,7 +16,7 @@ use App\Repository\DoctorRepository;
 class AdminPanelController extends AbstractController
 {
     /**
-     * @Route("/admin-panel", name="Panel Administracyjny")
+     * @Route("/admin", name="Panel Administracyjny")
      */
     public function panel(QuestionRepository $questionsRepository, DoctorRepository $doctors)
     {
