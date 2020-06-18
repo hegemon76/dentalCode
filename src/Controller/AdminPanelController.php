@@ -31,7 +31,7 @@ class AdminPanelController extends AbstractController
     }
 
     /**
-     * @Route("/add_doctor", name="dodaj_doktora")
+     * @Route("admin/add_doctor", name="dodaj_doktora")
      */
     public function new(EntityManagerInterface $em, Request $request)
     {
