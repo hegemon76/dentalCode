@@ -22,6 +22,12 @@ class Visit
      */
     private $doctor;
 
+    /**
+     * @ORM\Column(type="datetime")
+     * @var string A "Y-m-d H:i:s" formatted value
+     */
+    private $date;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +41,18 @@ class Visit
     public function setDoctor(?Doctor $doctor): self
     {
         $this->doctor = $doctor;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }
