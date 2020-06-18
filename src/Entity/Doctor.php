@@ -31,11 +31,6 @@ class Doctor
      */
     private $specialization;
 
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $duty;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -73,18 +68,6 @@ class Doctor
     public function setSpecialization(string $specialization): self
     {
         $this->specialization = $specialization;
-
-        return $this;
-    }
-
-    public function getDuty(): ?\DateTimeInterface
-    {
-        return $this->duty;
-    }
-
-    public function setDuty(\DateTimeInterface $duty): self
-    {
-        $this->duty = $duty;
 
         return $this;
     }
