@@ -21,7 +21,7 @@ class StronaDomowaController extends AbstractController
     /**
      * @Route("/home", name="strona_domowa")
      */
-    public function index(EntityManagerInterface $em, Request $request, QuestionController $qc,AuthenticationUtils $authenticationUtils, SecurityController $sc)
+    public function index(EntityManagerInterface $em, Request $request, QuestionController $qc)
     {
 
         $questionForm = $this->createForm(QuestionType::class);

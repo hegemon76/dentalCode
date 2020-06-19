@@ -11,22 +11,27 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\DoctorType;
 use App\Form\RegistrationFormType;
+use App\Form\VisitType;
 use App\Repository\DoctorRepository;
+use App\Repository\VisitRepository;
+use PhpParser\Node\Stmt\Foreach_;
+use App\Entity\Doctor;
 
 class AdminPanelController extends AbstractController
 {
     /**
      * @Route("/admin", name="Panel Administracyjny")
      */
-    public function panel(QuestionRepository $questionsRepository, DoctorRepository $doctors)
+    public function panel(QuestionRepository $questionsRepository, DoctorRepository $doctors, RegistrationFormType $register)
     {
+
         $register = $this->createForm(RegistrationFormType::class);
 
         return $this->render('admin-panel/admin2.html.twig', [
             'controller_name' => 'AdminPanelController',
             'questions' => $questionsRepository->findAll(),
             'registrationForm' => $register->createView(),
-            'doctors' => $doctors->findAll()
+            'doctors' => $doctors->findAll(),
         ]);
     }
 
@@ -36,8 +41,10 @@ class AdminPanelController extends AbstractController
     public function new(EntityManagerInterface $em, Request $request)
     {
         $form = $this->createForm(DoctorType::class);
+        $visitForm = $this->createForm(VisitType::class);
 
         $form->handleRequest($request);
+        $visitForm->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $doctor = $form->getData();
@@ -51,6 +58,7 @@ class AdminPanelController extends AbstractController
         return $this->render('admin-panel/add_doctor.html.twig', [
             'controller_name' => 'AdminPanelController',
             'addDoctorForm' => $form->createView(),
+            'visitForm' => $form->createView(),
 
         ]);
     }
