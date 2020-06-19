@@ -6,10 +6,11 @@
             <img src="../../assets/wizyty/doctor.png" alt="doctor">
         </div>
         <div class="dane">
+            <p class="doctorId" style="display:none">{{ doctor.id }}</p>
             <p>{{ doctor.name }}</p>
             <p>{{ doctor.surname }}</p>
             <p>{{ doctor.specialization }}</p>
-            <button onclick="scrollToCalendar()">Wybierz</button>
+            <button class="idbtn" value="">Wybierz</button>
         </div>
     </div>
     {% endfor %}
@@ -98,16 +99,18 @@
             <td onclick="getHour(16)">16:00</td>
         </tr>
     </table>
+
+    <form method="post">
+        <input id="doctorIdInput" type="hidden" value="">
+        <input id="calendarDate" type="hidden" value="">
+        <input id="hour" type="hidden" value="">
+        <input type="submit" value="Umów wizytę">
+    </form>
 </section>
 
 <script>
     $calendar = document.getElementById("calendar-section");
     $hours = document.getElementById("hours-section");
-
-    function scrollToCalendar() {
-        $calendar.style.display = "flex";
-        $calendar.scrollIntoView({ block: "start" });
-    }
 
 </script>
 
@@ -331,20 +334,26 @@
 </script>
 
 <script>
+    let idbtn = document.getElementsByClassName("idbtn");
+    let idp = document.getElementsByClassName("doctorId");
+    for (let i = 0; i < idbtn.length; i++) {
+        //idbtn[i].value = idp[i].innerText;
+        idbtn[i].onclick = function () {
+            let idd = idp[i].innerText;
+            $calendar.style.display = "flex";
+            $calendar.scrollIntoView({ block: "start" });
+            document.getElementById("doctorIdInput").value = idd;
+        }
+    }
     let day;
     let newHour;
     function getCalendarDate() {
         day = value;
+        document.getElementById("calendarDate").value = nn;
     }
     function getHour(x) {
         newHour = x;
-        allData();
-    }
-
-    function allData() {
-        console.log(day);
-        console.log(nn);
-        console.log(newHour);
+        document.getElementById("hour").value = newHour;
     }
 
 </script>
