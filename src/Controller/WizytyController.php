@@ -49,7 +49,7 @@ class WizytyController extends AbstractController
         return $this->render('wizyty/wizyty2.html.twig', [
             'controller_name' => 'WizytyController',
             'questionForm' => $questionForm->createView(),
-            //'visitForm' => $visitForm->createView(),
+            'visitForm' => $visitForm->createView(),
             'registrationForm' => $register->createView(),
             'doctors' => $doctors->findAll()
 
