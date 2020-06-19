@@ -24,7 +24,6 @@ class Visit
 
     /**
      * @ORM\Column(type="datetime")
-     * @var string A "Y-m-d H:i:s" formatted value
      */
     private $date;
 

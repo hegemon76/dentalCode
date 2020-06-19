@@ -13,6 +13,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use App\Controller\QuestionController;
 use App\Form\RegistrationFormType;
 use App\Repository\DoctorRepository;
+use App\Form\VisitType;
 
 class WizytyController extends AbstractController
 {
@@ -25,11 +26,22 @@ class WizytyController extends AbstractController
        
         $questionForm = $this->createForm(QuestionType::class);
         $register = $this->createForm(RegistrationFormType::class);
+        $visitForm = $this->createForm(VisitType::class);
         
         $questionForm->handleRequest($request);
+        $visitForm->handleRequest($request);
+
+        
 
         if ($questionForm->isSubmitted() && $questionForm->isValid()) {
             $qc->newQuestion($em,$request);
+            return $this->redirectToRoute('strona_domowa');
+        }
+
+        if ($visitForm->isSubmitted() && $visitForm->isValid()) {
+            $visit = $visitForm->getData();
+            $em->persist($visit);
+            $em->flush();
             return $this->redirectToRoute('strona_domowa');
         }
 
@@ -37,6 +49,7 @@ class WizytyController extends AbstractController
         return $this->render('wizyty/wizyty2.html.twig', [
             'controller_name' => 'WizytyController',
             'questionForm' => $questionForm->createView(),
+            'visitForm' => $visitForm->createView(),
             'registrationForm' => $register->createView(),
             'doctors' => $doctors->findAll()
 
