@@ -37,8 +37,18 @@
 
             <div class="menu">
                 <ul>
-                    <!--<li class="active" id="logoutnbtn">Wyloguj się</li>-->
+                    {% if app.user %}
+
+                    <a href="{{ path('app_logout') }}">
+                        <li class="active" id="logoutnbtn">Wyloguj się</li>
+                    </a>
+
+                    {% else %}
                     <li class="active" id="loginbtn">Zaloguj się</li>
+
+                    {% endif %}
+
+
                     <li><a href="/wizyty">Umów wizytę</a></li>
                     <li><a href="/kontakt">Kontakt</a></li>
                 </ul>
