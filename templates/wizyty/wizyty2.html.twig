@@ -7,6 +7,7 @@
             <img src="../../assets/wizyty/doctor.png" alt="doctor">
         </div>
         <div class="dane">
+            <p>{{ doctor.id }} </p>
             <p>{{ doctor.name }} </p>
             <p>{{ doctor.surname }}</p>
             <p>Specjalizacja: {{ doctor.specialization }}</p>
@@ -14,6 +15,7 @@
         </div>
     </div>
 {% endfor %}
+{{ {% include '/form/visitForm.html.twig' %} }}
 </section>
 
 <section id="calendar-section" class="calendar-section">

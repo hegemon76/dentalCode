@@ -12,7 +12,9 @@ class VisitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('date')
+            ->add('date', null, [
+                'widget' => 'single_text'
+            ])
             ->add('doctor')
         ;
     }
