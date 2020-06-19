@@ -1,5 +1,5 @@
 .doctor-section{
-    width: 100%;
+    width: 100%;;
 
     .single-doctor{
         width: 90%;
@@ -55,6 +55,7 @@
     @media(min-width:1000px){
         min-height: 900px;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
         margin-bottom: 1rem;

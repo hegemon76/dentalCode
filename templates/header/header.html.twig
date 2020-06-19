@@ -37,8 +37,18 @@
 
             <div class="menu">
                 <ul>
-                    <li class="active" id="logoutnbtn">Wyloguj się</li>
+                    {% if app.user %}
+
+                    <a href="{{ path('app_logout') }}">
+                        <li class="active" id="logoutnbtn">Wyloguj się</li>
+                    </a>
+
+                    {% else %}
                     <li class="active" id="loginbtn">Zaloguj się</li>
+
+                    {% endif %}
+
+
                     <li><a href="/wizyty">Umów wizytę</a></li>
                     <li><a href="/kontakt">Kontakt</a></li>
                 </ul>
@@ -56,9 +66,10 @@
                 </a>
 
                 {% else %}
-                <li class="active" id="loginbtn">Zaloguj się</li>
+                <li class="active" id="loginbtn2">Zaloguj się</li>
 
                 {% endif %}
+
                 <li><a href="/wizyty">Umów wizytę</a></li>
                 <li><a href="/kontakt">Kontakt</a></li>
             </ul>
@@ -73,9 +84,9 @@
                 </div>
                 <h4>Zaloguj się</h4>
                 <div>
-                {% include '/security/login2.html.twig' %}
-                    </div>
-                    <a id="register" class="register" onclick="register()">Zarejestruj się</a>
+                    {% include '/security/login2.html.twig' %}
+                </div>
+
             </div>
 
             <div class="register-box">
