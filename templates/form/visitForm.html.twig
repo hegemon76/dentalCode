@@ -1,7 +1,32 @@
-{{ form_start(visitForm) }}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+{% endblock %}
 
-{{ form_widget(visitForm) }}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            $('.js-datepicker').datepicker();
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                {{ form_start(addDoctorForm) }}
+                    {{ form_row(addDoctorForm.name) }}
+                    {{ form_row(addDoctorForm.surname) }}
+                    {{ form_row(addDoctorForm.specialization) }}
+                {{ form_end(addDoctorForm) }}
 
-<button type="submit" class="btn btn-primary">Wyslij</button>
-
-{{ form_end(visitForm) }}
+                {{ form_start(visitForm) }}
+                {{ form_widget(visitForm) }}
+                {{ form_end(visitForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
