@@ -8,9 +8,9 @@
             klasy sprzęt którym dysponujemy sprawi, że wszystko przebiegnie sprawnie i bezboleśnie.</p>
     </div>
 
-    <img class="sliderimg" src="assets/home/banner1.svg" alt="girl">
-    <img class="sliderimg" src="assets/home/banner2.svg" alt="people">
-    <img class="sliderimg" src="assets/home/banner3.svg" alt="girl">
+    <img class="sliderimg" src="assets/home/banner1.jpg" alt="girl">
+    <img class="sliderimg" src="assets/home/banner2.jpg" alt="people">
+    <img class="sliderimg" src="assets/home/banner3.jpg" alt="girl">
 
 </section>
 
@@ -110,6 +110,17 @@
     }
     myLoop();
 
+</script>
+
+<script>
+    const rgstrbtn = document.getElementById("registration_form_password_first");
+    const rgstrbtn2 = document.getElementById("registration_form_password_second");
+    var attrib = document.createAttribute("placeholder");
+    var attrib2 = document.createAttribute("placeholder");
+    attrib.value = "Hasło";
+    attrib2.value = "Powtórz hasło";
+    rgstrbtn.setAttributeNode(attrib);
+    rgstrbtn2.setAttributeNode(attrib2);
 </script>
 
 {% endblock %}
