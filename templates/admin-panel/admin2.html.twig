@@ -120,12 +120,6 @@
                         <p>Imie: {{ doctor.name }}</p>
                         <p>Nazwisko: {{ doctor.surname }}</p>
                         <p>Specjalizacja: {{ doctor.specialization }}</p>
-                        <p> Wizyty: </p>
-                        {% for visit in doctor.visits %}
-                        <p> {{ visit.date }} </p>
-                        {% else %}
-                        <p>Brak wizyt</p>
-                        {% endfor %}
                     </div>
                     <div class="buttons-wrapper">
                         <button class="edit">EDYTUJ</button>
