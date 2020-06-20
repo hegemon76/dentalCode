@@ -19,6 +19,11 @@ class VisitRepository extends ServiceEntityRepository
         parent::__construct($registry, Visit::class);
     }
 
+    public function findAll()
+    {
+        return $this->findBy(array(), array('date' => 'ASC'));
+    }
+
     // /**
     //  * @return Visit[] Returns an array of Visit objects
     //  */

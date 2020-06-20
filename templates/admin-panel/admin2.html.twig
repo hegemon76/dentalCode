@@ -120,7 +120,7 @@
                         <p>Imie: {{ doctor.name }}</p>
                         <p>Nazwisko: {{ doctor.surname }}</p>
                         <p>Specjalizacja: {{ doctor.specialization }}</p>
-
+                        <p>Wizyty:</p>
                         {% for visit in doctor.visits %}
                         <p> {{ visit.date|date("m/d/Y") }} - {{ visit.time|date("H:i") }} </p>
                         {% endfor %}

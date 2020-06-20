@@ -33,7 +33,7 @@ class AdminPanelController extends AbstractController
             'questions' => $questionsRepository->findAll(),
             'registrationForm' => $register->createView(),
             'doctors' => $doctors->findAll(),
-            'visits' => $visit->findAll(),
+            'visits' => $visit->findAll()
         ]);
     }
 
