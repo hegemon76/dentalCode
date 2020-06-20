@@ -15,9 +15,6 @@ class VisitType extends AbstractType
     {
         $builder
             ->add('date', DateType::class, [
-                'widget' => 'single_text',
-                'attr' => ['class' => 'js-datepicker'],
-                'html5' => false,
             ])
             ->add('doctor')
         ;

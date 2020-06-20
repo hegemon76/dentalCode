@@ -10,10 +10,12 @@
             <p>{{ doctor.name }}</p>
             <p>{{ doctor.surname }}</p>
             <p>{{ doctor.specialization }}</p>
+           
             <button class="idbtn" value="">Wybierz</button>
         </div>
     </div>
     {% endfor %}
+     {{ include ('/form/visitForm.html.twig') }}
 </section>
 
 <section id="calendar-section" class="calendar-section">

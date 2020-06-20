@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Doctor;
-use App\Form\Doctor1Type;
+use App\Form\DoctorType;
 use App\Repository\DoctorRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,7 +31,7 @@ class DoctorController extends AbstractController
     public function new(Request $request): Response
     {
         $doctor = new Doctor();
-        $form = $this->createForm(Doctor1Type::class, $doctor);
+        $form = $this->createForm(DoctorType::class, $doctor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
