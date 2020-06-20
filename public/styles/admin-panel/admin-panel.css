@@ -33,7 +33,8 @@
 }
 
 .admin-panel-controll-window .left-column ul .active {
-  background-color: rgba(120, 193, 255, 0.3);
+  color: #78c1ff;
+  font-weight: bold;
 }
 
 .admin-panel-controll-window .right-column {
@@ -87,6 +88,7 @@
   min-height: 200px;
   margin: 2rem 0 1rem 0;
   height: auto;
+  border-top: 1px solid black;
 }
 
 .admin-panel-controll-window .right-column .questions-box .single-question .right-wrapper input {
@@ -98,121 +100,6 @@
   border-radius: 100px;
 }
 
-.admin-panel-controll-window .right-column .calendar {
-  display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  max-height: 800px;
-  width: 100%;
-}
-
-.admin-panel-controll-window .right-column .calendar input {
-  width: 50px;
-  height: 50px;
-  border: 0;
-  outline: 0;
-}
-
-.admin-panel-controll-window .right-column .calendar .rotate {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.admin-panel-controll-window .right-column .calendar .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.admin-panel-controll-window .right-column .calendar .wrapper .table-container {
-  text-align: center;
-}
-
-.admin-panel-controll-window .right-column .calendar .wrapper .table-container table {
-  border-spacing: 0.5rem;
-}
-
-.admin-panel-controll-window .right-column .calendar .wrapper .table-container table tr td {
-  text-align: center;
-  width: 100px;
-  height: 100px;
-  border: 2px solid #78c1ff;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.admin-panel-controll-window .right-column .calendar .wrapper .table-container table tr .blocked {
-  border: 0;
-  cursor: auto !important;
-}
-
-.admin-panel-controll-window .right-column .calendar .hidden-box {
-  display: none;
-  z-index: 9999999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background-color: rgba(191, 191, 191, 0.6);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.admin-panel-controll-window .right-column .calendar .hidden-box .hidden-window {
-  left: 20%;
-  width: 60%;
-  height: 600px;
-  background-color: #fff;
-  border: 2px solid #78c1ff;
-  border-radius: 20px;
-}
-
-.admin-panel-controll-window .right-column .calendar .hidden-box .hidden-window .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.admin-panel-controll-window .right-column .calendar .hidden-box .hidden-window .wrapper h2 {
-  text-align: center;
-  -webkit-box-flex: 90%;
-      -ms-flex: 90%;
-          flex: 90%;
-  padding-left: 5%;
-}
-
-.admin-panel-controll-window .right-column .calendar .hidden-box .hidden-window .wrapper input {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  -webkit-box-flex: 10%;
-      -ms-flex: 10%;
-          flex: 10%;
-  max-width: 20px;
-  max-height: 20px;
-  border: 0;
-  outline: 0;
-  padding: 1rem 1rem 0 0;
-}
-
 .admin-panel-controll-window .right-column .workers {
   display: none;
   -webkit-box-align: top;
@@ -222,6 +109,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 .admin-panel-controll-window .right-column .workers .workers-wrapper {
@@ -281,31 +169,59 @@
   margin-bottom: 2rem;
 }
 
-.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper {
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .text-wrapper .visits {
+  display: none;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .text-wrapper .buttons-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
-.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper button {
-  margin: 1vw;
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .text-wrapper .buttons-wrapper button {
+  background-color: #78c1ff;
+  cursor: pointer;
+  color: #fff;
+  padding: 0.5rem;
+  border: 0;
+  outline: 0;
+  border-radius: 20px;
+  width: 100px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0.2rem 1rem 0.2rem;
+  margin-top: 0 !important;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .text-wrapper .buttons-wrapper .btn {
+  background-color: rgba(255, 43, 0, 0.5) !important;
+  border: 2px solid #ff2b00 !important;
+}
+
+.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .text-wrapper .buttons-wrapper .showVisits {
+  background-color: #78c1ff;
+  cursor: pointer;
+  color: #fff;
   padding: 1rem;
-  border-radius: 10px;
-  width: 40%;
-  text-align: center;
-}
-
-.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper .edit {
-  background-color: rgba(255, 204, 0, 0.5);
-  border: 2px solid #ffcc00;
-}
-
-.admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper .delete {
-  background-color: rgba(255, 43, 0, 0.5);
-  border: 2px solid #ff2b00;
+  border: 0;
+  outline: 0;
+  border-radius: 20px;
 }
 
 .admin-panel-controll-window .right-column .workers .buttons-wrapper-outer {
@@ -327,18 +243,15 @@
   border: 2px solid #00b800;
 }
 
-@media (max-width: 1300px) {
-  .admin-panel-controll-window .right-column .calendar {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+@media (max-width: 1650px) {
+  .admin-panel-controll-window .workers .workers-wrapper .single-worker .text-wrapper .buttons-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  .admin-panel-controll-window .right-column .calendar .wrapper .table-container .this-month {
-    border-spacing: 0.2rem;
-  }
-  .admin-panel-controll-window .right-column .calendar .wrapper .table-container .this-month td {
-    width: 80px;
-    height: 80px;
+  .admin-panel-controll-window .workers .workers-wrapper .single-worker .text-wrapper .buttons-wrapper button {
+    width: 10vw !important;
   }
 }
 
@@ -383,27 +296,49 @@
     font-size: 12px;
     margin: 2rem 0 1rem 0;
   }
-  .admin-panel-controll-window .right-column .calendar {
-    min-height: 600px;
-  }
-  .admin-panel-controll-window .right-column .calendar .wrapper .table-container .this-month td {
-    width: 10vw;
-    height: 10vw;
-    font-size: 12px;
+  .admin-panel-controll-window .right-column .questions-box .single-question .right-wrapper textarea {
+    padding-top: 0;
+    min-height: 170px;
+    border-top: 1px solid black;
   }
   .admin-panel-controll-window .right-column .workers .single-worker .text-wrapper {
     font-size: 12px;
   }
-  .admin-panel-controll-window .right-column .workers .single-worker .buttons-wrapper button {
-    width: 30%;
-    font-size: 10px;
+  .admin-panel-controll-window .right-column .workers .single-worker .text-wrapper .buttons-wrapper {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .admin-panel-controll-window .right-column .workers .single-worker .text-wrapper .buttons-wrapper button {
+    width: 20vw !important;
+    margin: 1.5rem 0;
+  }
+  .admin-panel-controll-window .right-column .workers .single-worker .text-wrapper .visits {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
 @media (max-width: 600px) {
+  .admin-panel-controll-window .left-column {
+    max-height: 50px !important;
+  }
   .admin-panel-controll-window .left-column ul li {
     width: 100px;
-    height: 100px;
+    height: 50px;
   }
   .admin-panel-controll-window .right-column .questions-box {
     height: auto;
@@ -414,27 +349,42 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .admin-panel-controll-window .right-column .questions-box .single-question .right-wrapper {
-    width: 100%;
-  }
-  .admin-panel-controll-window .right-column .calendar .wrapper input {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  .admin-panel-controll-window .right-column .calendar .wrapper .table-container .this-month td {
-    font-size: 8px;
+  .admin-panel-controll-window .right-column .questions-box .single-question .right-wrapper textarea {
+    width: 95%;
+    padding-top: 0;
   }
   .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker {
+    display: inline-block;
     width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper {
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .buttons-wrapper button {
-    width: 100%;
+    width: 50vw !important;
+    margin: 0.5rem;
+  }
+  .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .visits {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 /*# sourceMappingURL=admin-panel.css.map */

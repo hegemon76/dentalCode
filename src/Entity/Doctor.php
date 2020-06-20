@@ -114,4 +114,10 @@ class Doctor
 
         return $this;
     }
+
+    public function __toString()
+    {
+        $name = $this->getName();
+        return $name;
+    }
 }

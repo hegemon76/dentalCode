@@ -1,11 +1,20 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link href="{{ asset('styles/adddoctor/addoctor.css') }}" rel="stylesheet" />
+{% endblock %}
 
 {% block title %}New Doctor{% endblock %}
 
 {% block body %}
-    <h1>Create new Doctor</h1>
+<h1>Dodaj nowego doktora</h1>
 
-    {{ include('doctor/_form.html.twig') }}
+{{ include('doctor/_form.html.twig') }}
 
-    <a href="{{ path('doctor_index') }}">back to list</a>
+<a href="{{ path('doctor_index') }}">Wróć</a>
+<script>
+    let labels = document.getElementsByTagName("label");
+    labels[0].innerText = "Imię";
+    labels[1].innerText = "Nazwisko";
+    labels[2].innerText = "Specjalizacja";
+</script>
 {% endblock %}

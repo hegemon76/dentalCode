@@ -34,11 +34,28 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3rem 1rem 0 1rem;
 }
 
 .kontakt-section-1 h2 {
   text-align: center;
+}
+
+.kontakt-section-1 .wrapper {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .kontakt-section-1 .wrapper ul {
@@ -64,24 +81,28 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 13px;
 }
 
 .kontakt-section-1 .wrapper ul .mark:before {
   content: url("../../assets/kontakt/mark.svg");
   margin-right: 2rem;
+  height: 40px;
 }
 
 .kontakt-section-1 .wrapper ul .phone:before {
   content: url("../../assets/kontakt/phone.svg");
   margin-right: 2rem;
+  height: 40px;
 }
 
 .kontakt-section-1 .wrapper ul .envelope:before {
   content: url("../../assets/kontakt/envelope.svg");
   margin-right: 2rem;
+  height: 50px;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
   .kontakt-section-1 {
     margin-top: 0;
     margin-bottom: 0;
@@ -91,6 +112,10 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -100,10 +125,34 @@
     margin-bottom: 0;
   }
   .kontakt-section-1 .wrapper .left-column, .kontakt-section-1 .wrapper .right-column {
-    margin: 5rem 8vw 0 8vw;
+    margin: 5rem 2vw 0 2vw;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
   }
   .kontakt-section-1 .wrapper .left-column ul, .kontakt-section-1 .wrapper .right-column ul {
     line-height: 150px;
+  }
+  .kontakt-section-1 .wrapper .left-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .kontakt-section-1 .wrapper .left-column .mark:before {
+    height: 120px;
+  }
+  .kontakt-section-1 .wrapper .left-column .phone:before {
+    height: 120px;
+  }
+  .kontakt-section-1 .wrapper .left-column .envelope:before {
+    height: 140px;
   }
 }
 

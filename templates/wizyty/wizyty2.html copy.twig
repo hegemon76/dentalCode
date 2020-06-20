@@ -1,36 +1,23 @@
 {% include '/header/header.html.twig' %}
 
 <section class="doctor-section">
+    {% for doctor in doctors %}
     <div class="single-doctor">
         <div class="img-container">
             <img src="../../assets/wizyty/doctor.png" alt="doctor">
         </div>
         <div class="dane">
-            <p class="name">Imie</p>
-            <p class="surname">Nazwisko</p>
-            <button onclick="scrollToCalendar()">Wybierz</button>
+            <p class="doctorId" style="display:none">{{ doctor.id }}</p>
+            <p>{{ doctor.name }}</p>
+            <p>{{ doctor.surname }}</p>
+            <p>{{ doctor.specialization }}</p>
+           
+            <button class="idbtn" value="">Wybierz</button>
         </div>
     </div>
-    <div class="single-doctor">
-        <div class="img-container">
-            <img src="../../assets/wizyty/doctor.png" alt="doctor">
-        </div>
-        <div class="dane">
-            <p class="name">Imie</p>
-            <p class="surname">Nazwisko</p>
-            <button onclick="scrollToCalendar()">Wybierz</button>
-        </div>
-    </div>
-    <div class="single-doctor">
-        <div class="img-container">
-            <img src="../../assets/wizyty/doctor.png" alt="doctor">
-        </div>
-        <div class="dane">
-            <p class="name">Imie</p>
-            <p class="surname">Nazwisko</p>
-            <button onclick="scrollToCalendar()">Wybierz</button>
-        </div>
-    </div>
+    {% endfor %}
+    {{ include ('/visit/new.html.twig') }}
+   {{ include ('form/visitForm.html.twig')}}
 </section>
 
 <section id="calendar-section" class="calendar-section">
@@ -104,28 +91,30 @@
 <section id="hours-section" class="hours-section">
     <table class="hours-table">
         <tr>
-            <td>9:00</td>
-            <td>10:00</td>
-            <td>11:00</td>
-            <td>12:00</td>
+            <td onclick="getHour(9)">9:00</td>
+            <td onclick="getHour(10)">10:00</td>
+            <td onclick="getHour(11)">11:00</td>
+            <td onclick="getHour(12)">12:00</td>
         </tr>
         <tr>
-            <td>13:00</td>
-            <td>14:00</td>
-            <td>15:00</td>
-            <td>16:00</td>
+            <td onclick="getHour(13)">13:00</td>
+            <td onclick="getHour(14)">14:00</td>
+            <td onclick="getHour(15)">15:00</td>
+            <td onclick="getHour(16)">16:00</td>
         </tr>
     </table>
+
+    <form method="post">
+        <input id="doctorIdInput" type="hidden" value="">
+        <input id="calendarDate" type="hidden" value="">
+        <input id="hour" type="hidden" value="">
+        <input type="submit" value="Umów wizytę">
+    </form>
 </section>
 
 <script>
     $calendar = document.getElementById("calendar-section");
     $hours = document.getElementById("hours-section");
-
-    function scrollToCalendar() {
-        $calendar.style.display = "flex";
-        $calendar.scrollIntoView({ block: "start" });
-    }
 
 </script>
 
@@ -146,6 +135,7 @@
     month[10] = "Listopad";
     month[11] = "Grudzień";
     var n = month[d.getMonth()];
+    var nn = d.getMonth() + 1;
     current_month.innerText = n;
 
     var prev = document.getElementsByClassName("prev")[0];
@@ -165,6 +155,7 @@
         value = this.className;
         $hours.style.display = "flex";
         $hours.scrollIntoView({ block: "start" });
+        getCalendarDate();
     }
 
 
@@ -172,9 +163,11 @@
         number++;
         if (number == 0) {
             n = month[d.getMonth()];
+            nn = d.getMonth() + 1;
         }
         else {
             n = month[d.getMonth() + number];
+            nn = d.getMonth() + 1 + number;
         }
         current_month.innerText = n;
         prev.style.visibility = "visible";
@@ -184,9 +177,11 @@
         number--;
         if (number == 0) {
             n = month[d.getMonth()];
+            nn = d.getMonth() + 1;
         }
         else {
             n = month[d.getMonth() + number];
+            nn = d.getMonth() - 1 - number;
         }
         current_month.innerText = n;
         next.style.visibility = "visible";
@@ -340,6 +335,36 @@
 <script>
     let header = document.getElementsByTagName("header")[0];
     header.style.position = "unset";
+</script>
+
+<script>
+    let idbtn = document.getElementsByClassName("idbtn");
+    let idp = document.getElementsByClassName("doctorId");
+    for (let i = 0; i < idbtn.length; i++) {
+        //idbtn[i].value = idp[i].innerText;
+        idbtn[i].onclick = function () {
+            let idd = idp[i].innerText;
+            $calendar.style.display = "flex";
+            $calendar.scrollIntoView({ block: "start" });
+            document.getElementById("doctorIdInput").value = idd;
+        }
+    }
+    let day;
+    let newHour;
+    function getCalendarDate() {
+        day = value;
+        document.getElementById("calendarDate").value = nn;
+    }
+    function getHour(x) {
+        newHour = x;
+        document.getElementById("hour").value = newHour;
+    }
+
+</script>
+
+<script>
+    const lgn = document.getElementById("loginbtn");
+    lgn.style.display = "none";
 </script>
 
 {% include '/footer/footer.html.twig' %}

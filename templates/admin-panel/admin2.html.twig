@@ -1,0 +1,132 @@
+{% include '/header/header.html.twig' %}
+
+<section class="admin-panel-controll-window">
+
+    <div class="left-column">
+        <ul>
+            <li class="active sidebar-li">Pytania</li>
+            <li class="sidebar-li">Pracownicy</li>
+        </ul>
+    </div>
+
+    <div class="right-column">
+        <div class="questions-box">
+            {% for question in questions %}
+            <div class="single-question">
+                <div class="left-wrapper">
+                    <p>Imię: {{ question.name }}</p>
+                    <p>Nazwisko: {{ question.surname }}</p>
+                    <p>E-mail: {{ question.email }}</p>
+                    <p>Tresc: {{ question.body }}</p>
+                </div>
+                <div class="right-wrapper">
+                    <textarea></textarea>
+                    <input type="submit">
+                </div>
+            </div>
+            {% else %}
+            <tr>
+                <td colspan="4">Brak pytan w bazie</td>
+            </tr>
+            {% endfor %}
+
+        </div>
+
+        <div class="workers">
+            <div class="workers-wrapper">
+                {% for doctor in doctors %}
+                <div class="single-worker">
+                    <div class="img-container">
+                        <img src="assets/admin-panel/doctor.png" alt="doctor">
+                    </div>
+                    <div class="text-wrapper">
+                        <p>Imie: {{ doctor.name }}</p>
+                        <p>Nazwisko: {{ doctor.surname }}</p>
+                        <p>Specjalizacja: {{ doctor.specialization }}</p>
+                        <div class="buttons-wrapper">
+                            <button class="showVisits">Pokaż wizyty</button>
+                            <a href="{{ path('doctor_edit', {'id': doctor.id}) }}"
+                                class="button"><button>Edytuj</button></a>
+                            {{ include('doctor/_delete_form.html.twig') }}
+                        </div>
+                        <div class="visits">
+                            {% for visit in doctor.visits %}
+                            <p> {{ visit.date|date("m/d/Y") }} - {{ visit.time|date("H:i") }} </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <p> Brak lekarzy </p>
+                {% endfor %}
+
+            </div>
+            <div class="buttons-wrapper-outer">
+                <a href="{{ path('doctor_new') }}" class="add button">Dodaj</a>
+            </div>
+        </div>
+    </div>
+
+
+
+</section>
+
+{% block javascripts %}
+
+<script>
+    var li = document.getElementsByClassName("sidebar-li");
+    var qbox = document.getElementsByClassName("questions-box")[0];
+    var workers = document.getElementsByClassName("workers")[0];
+    li[0].onclick = function () {
+        li[0].className = "active sidebar-li";
+        li[1].className = "sidebar-li";
+        qbox.style.display = "block";
+        workers.style.display = "none";
+    }
+    li[1].onclick = function () {
+        li[0].className = "sidebar-li";
+        li[1].className = "active sidebar-li";
+        qbox.style.display = "none";
+        workers.style.display = "flex";
+    }
+</script>
+
+<script>
+    var header = document.getElementsByTagName("header")[0];
+    header.style.position = "unset";
+    var menu = document.getElementsByClassName("menu")[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
+    menu[0].id = "logout";
+    menu[0].innerHTML = "<a href='/home'>Wyloguj się</a>";
+    menu[1].style.display = "none";
+    menu[2].style.display = "none";
+</script>
+
+<script>
+    let visitButton = document.getElementsByClassName("showVisits");
+    let visitsContainer = document.getElementsByClassName("visits");
+    let visible = false;
+    for (let i = 0; i < visitButton.length; i++) {
+        visitButton[i].onmouseover = function () {
+            visitsContainer[i].style.display = "flex";
+        }
+        visitButton[i].onmouseout = function () {
+            visitsContainer[i].style.display = "none";
+        }
+        visitButton[i].onclick = function () {
+            if (visible == false) {
+                visitsContainer[i].style.display = "flex";
+                visible = true;
+            }
+            else {
+                visitsContainer[i].style.display = "none";
+                visible = false;
+            }
+
+        }
+
+    }
+</script>
+
+{% endblock %}
+
+{% include '/footer/footer.html.twig' %}

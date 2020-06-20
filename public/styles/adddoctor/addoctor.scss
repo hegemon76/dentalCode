@@ -1,0 +1,28 @@
+body{
+    font-family: "Poppins";
+}
+h1{
+        color:#78c1ff !important;
+}
+form{
+    #doctor{
+    div{
+        display: flex;
+        width: 300px;
+        label,input{
+            flex:1;
+            margin-bottom: 1rem;
+        }
+    }
+}
+button{
+    background-color: #78c1ff;
+    border-radius: 20px;
+    color:#fff;
+    padding: 1rem;
+    width:200px;
+    border: 0;
+    outline: 0;
+    margin-bottom: 1rem;
+}
+}

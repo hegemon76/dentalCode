@@ -19,7 +19,7 @@ class StronaDomowaController extends AbstractController
 {
 
     /**
-     * @Route("/home", name="strona_domowa")
+     * @Route("/", name="strona_domowa")
      */
     public function index(EntityManagerInterface $em, Request $request, QuestionController $qc)
     {
