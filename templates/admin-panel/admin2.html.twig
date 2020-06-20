@@ -121,9 +121,9 @@
                         <p>Nazwisko: {{ doctor.surname }}</p>
                         <p>Specjalizacja: {{ doctor.specialization }}</p>
                     </div>
+                    {{ include('doctor/_delete_form.html.twig') }}
                     <div class="buttons-wrapper">
-                        <button class="edit">EDYTUJ</button>
-                        <button class="delete">USUŃ</button>
+                        <a href="{{ path('doctor_edit', {'id': doctor.id}) }}" class="button">Edytuj</a>
                     </div>
                 </div>
                 {% else %}
