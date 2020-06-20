@@ -16,13 +16,14 @@ use App\Repository\DoctorRepository;
 use App\Repository\VisitRepository;
 use PhpParser\Node\Stmt\Foreach_;
 use App\Entity\Doctor;
+use Doctrine\ORM\Mapping\OrderBy;
 
 class AdminPanelController extends AbstractController
 {
     /**
      * @Route("/admin", name="Panel Administracyjny")
      */
-    public function panel(QuestionRepository $questionsRepository, DoctorRepository $doctors, RegistrationFormType $register)
+    public function panel(QuestionRepository $questionsRepository, DoctorRepository $doctors, RegistrationFormType $register, VisitRepository $visit)
     {
 
         $register = $this->createForm(RegistrationFormType::class);
@@ -32,6 +33,7 @@ class AdminPanelController extends AbstractController
             'questions' => $questionsRepository->findAll(),
             'registrationForm' => $register->createView(),
             'doctors' => $doctors->findAll(),
+            'visits' => $visit->findAll(),
         ]);
     }
 

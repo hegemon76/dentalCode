@@ -40,6 +40,7 @@ class WizytyController extends AbstractController
             $visit = new Visit();
 
             $visit = $visitForm->getData();
+            
             $em->persist($visit);
             $em->flush();
         }

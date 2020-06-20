@@ -74,4 +74,10 @@ class Visit
 
         return $this;
     }
+
+    public function __toString()
+    {
+        $date = $this->getdate();
+        return $date;
+    }
 }
