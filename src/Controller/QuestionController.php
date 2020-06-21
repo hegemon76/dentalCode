@@ -37,7 +37,7 @@ class QuestionController extends AbstractController
         ]);
     }
 
-    public function newQuestion(EntityManagerInterface $em, Request $request)
+    public function new(EntityManagerInterface $em, Request $request)
     {
         $question = new Question();
 
@@ -48,6 +48,7 @@ class QuestionController extends AbstractController
 
             $em->persist($question);
             $em->flush();
+            $this->addFlash('success','Udalo sie');
     }
 
      /**

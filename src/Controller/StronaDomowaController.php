@@ -7,13 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Controller\RegistrationController;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use App\Controller\QuestionController;
 use App\Form\RegistrationFormType;
 use App\Form\LoginType;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use App\Controller\SecurityController;
 
 class StronaDomowaController extends AbstractController
 {
@@ -27,15 +23,13 @@ class StronaDomowaController extends AbstractController
         $questionForm = $this->createForm(QuestionType::class);
         $register = $this->createForm(RegistrationFormType::class);
         $loginForm = $this->createForm(LoginType::class);
-        //$error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
-       // $lastUsername = $authenticationUtils->getLastUsername();
 
         $loginForm->handleRequest($request);
+
         $questionForm->handleRequest($request);
 
         if ($questionForm->isSubmitted() && $questionForm->isValid()) {
-            $qc->newQuestion($em, $request);
+            $qc->new($em, $request);
             return $this->redirectToRoute('strona_domowa');
         }
 
@@ -43,9 +37,7 @@ class StronaDomowaController extends AbstractController
         return $this->render('strona_domowa/index.html.twig', [
             'controller_name' => 'StronaDomowaController',
             'questionForm' => $questionForm->createView(),
-            'registrationForm' => $register->createView(),
-            //'last_username' => $lastUsername
-           // 'error' => $error,
+            'registrationForm' => $register->createView()
 
         ]);
     }

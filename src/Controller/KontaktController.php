@@ -25,7 +25,7 @@ class KontaktController extends AbstractController
         $questionForm->handleRequest($request);
 
         if ($questionForm->isSubmitted() && $questionForm->isValid()) {
-            $qc->newQuestion($em,$request);
+            $qc->new($em,$request);
             return $this->redirectToRoute('strona_domowa');
         }
 
