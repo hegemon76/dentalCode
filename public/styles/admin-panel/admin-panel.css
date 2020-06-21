@@ -171,6 +171,10 @@
 
 .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .text-wrapper .visits {
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .admin-panel-controll-window .right-column .workers .workers-wrapper .single-worker .text-wrapper .buttons-wrapper {
