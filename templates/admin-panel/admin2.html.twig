@@ -107,12 +107,6 @@
     let visitsContainer = document.getElementsByClassName("visits");
     let visible = false;
     for (let i = 0; i < visitButton.length; i++) {
-        visitButton[i].onmouseover = function () {
-            visitsContainer[i].style.display = "flex";
-        }
-        visitButton[i].onmouseout = function () {
-            visitsContainer[i].style.display = "none";
-        }
         visitButton[i].onclick = function () {
             if (visible == false) {
                 visitsContainer[i].style.display = "flex";
