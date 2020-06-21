@@ -63,7 +63,7 @@ class DoctorController extends AbstractController
      */
     public function edit(Request $request, Doctor $doctor): Response
     {
-        $form = $this->createForm(Doctor1Type::class, $doctor);
+        $form = $this->createForm(DoctorType::class, $doctor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
