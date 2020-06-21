@@ -21,7 +21,7 @@ use Doctrine\ORM\Mapping\OrderBy;
 class AdminPanelController extends AbstractController
 {
     /**
-     * @Route("/admin", name="Panel Administracyjny")
+     * @Route("/admin", name="admin_panel")
      */
     public function panel(QuestionRepository $questionsRepository, DoctorRepository $doctors, RegistrationFormType $register, VisitRepository $visit)
     {

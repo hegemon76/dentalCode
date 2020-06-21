@@ -39,7 +39,7 @@ class DoctorController extends AbstractController
             $entityManager->persist($doctor);
             $entityManager->flush();
 
-            return $this->redirectToRoute('doctor_index');
+            return $this->redirectToRoute('admin_panel');
         }
 
         return $this->render('doctor/new.html.twig', [
@@ -69,7 +69,7 @@ class DoctorController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('doctor_index');
+            return $this->redirectToRoute('admin_panel');
         }
 
         return $this->render('doctor/edit.html.twig', [
@@ -89,6 +89,6 @@ class DoctorController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('doctor_index');
+        return $this->redirectToRoute('admin_panel');
     }
 }
