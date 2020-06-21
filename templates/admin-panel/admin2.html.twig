@@ -52,7 +52,7 @@
                         </div>
                         <div class="visits">
                             {% for visit in doctor.visits %}
-                            <p> {{ visit.date|date("m/d/Y") }} - {{ visit.time|date("H:i") }} {{ include('visit/_delete_form.html.twig') }}</p>
+                            <p> {{ visit.date|date("m/d/Y") }} - {{ visit.time|date("H:i") }} - {{ include('visit/_delete_form.html.twig') }}</p>
                             {% endfor %}
                         </div>
                     </div>

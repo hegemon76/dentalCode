@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Doctor{% endblock %}
+{% block stylesheets %}
+<link href="{{ asset('styles/adddoctor/addoctor.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}Edytuj Doktora{% endblock %}
 
 {% block body %}
-    <h1>Edit Doctor</h1>
+    <h1>Edytuj Doktora</h1>
 
-    {{ include('doctor/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('doctor_index') }}">back to list</a>
+    {{ include('doctor/_form.html.twig', {'button_label': 'Aktualizuj'}) }}
 
     {{ include('doctor/_delete_form.html.twig') }}
+
+    <a href="{{ path('admin_panel') }}" class="btn btn-primary">Powrót</a>
 {% endblock %}
