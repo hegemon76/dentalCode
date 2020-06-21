@@ -18,6 +18,7 @@
                     <p>Nazwisko: {{ question.surname }}</p>
                     <p>E-mail: {{ question.email }}</p>
                     <p>Tresc: {{ question.body }}</p>
+                    {{ include('question/delete.html.twig') }}
                 </div>
                 <div class="right-wrapper">
                     <textarea></textarea>

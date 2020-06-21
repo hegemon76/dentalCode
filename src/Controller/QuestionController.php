@@ -39,6 +39,8 @@ class QuestionController extends AbstractController
 
     public function newQuestion(EntityManagerInterface $em, Request $request)
     {
+        $question = new Question();
+
         $questionForm = $this->createForm(QuestionType::class);
         $questionForm->handleRequest($request);
 
@@ -46,5 +48,19 @@ class QuestionController extends AbstractController
 
             $em->persist($question);
             $em->flush();
+    }
+
+     /**
+     * @Route("/question/{id}", name="question_delete", methods={"DELETE"})
+     */
+    public function delete(Request $request, Question $question): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$question->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($question);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('admin_panel');
     }
 }

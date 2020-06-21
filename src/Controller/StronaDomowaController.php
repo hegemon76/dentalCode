@@ -40,18 +40,10 @@ class StronaDomowaController extends AbstractController
         }
 
 
-        if ($questionForm->isSubmitted() && $questionForm->isValid()) {
-            $qc->newQuestion($em, $request);
-            return $this->redirectToRoute('strona_domowa');
-        }
-
-
-
         return $this->render('strona_domowa/index.html.twig', [
             'controller_name' => 'StronaDomowaController',
             'questionForm' => $questionForm->createView(),
             'registrationForm' => $register->createView(),
-            'loginForm' => $loginForm->createView(),
             //'last_username' => $lastUsername
            // 'error' => $error,
 
